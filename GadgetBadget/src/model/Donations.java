@@ -121,10 +121,10 @@ public class Donations {
 				"   			</a>\r\n" + 
 				"   			<br>\r\n" + 
 				"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
-				"			  <a href=\"AdminHome.jsp\" >Home</a>\r\n" + 
+				"			  <a href=\"\" >Home</a>\r\n" + 
 				"			  <a href=\"#\">Products</a>\r\n" + 
-				"			  <a href=\"AdminDonations.jsp\" class=\"active\">Donations</a>\r\n" + 
-				"			  <a href=\"AdminFundingDesk.jsp\">Funding HelpDesk</a>\r\n" + 
+				"			  <a href=\"\" class=\"active\">Donations</a>\r\n" + 
+				"			  <a href=\"\">Funding HelpDesk</a>\r\n" + 
 				"			  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\r\n" + 
 				"			    <i class=\"fa fa-bars\"></i>\r\n" + 
 				"			  </a>\r\n" + 
@@ -137,7 +137,7 @@ public class Donations {
 				"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
 				"			  <div class=\"dropdown-content\">\r\n" + 
 				"			    <a href=\"#\">Profile</a>\r\n" + 
-				"			    <a href=\"Home.jsp\">Log Out</a>\r\n" + 
+				"			    <a href=\"\">Log Out</a>\r\n" + 
 				"			  </div>\r\n" + 
 				"			</div>			\r\n" + 
 				"		</div>	\r\n" + 
@@ -180,7 +180,7 @@ public class Donations {
 			
 			// buttons
 			output += "<td>"
-						+ "<form action='../../../lab6/DonationsService/Donations/Delete' method='post'>"
+						+ "<form action='../../../GadgetBadget/DonationsService/Donations/Delete' method='post'>"
 						+ "<input name='btnRemove' type='submit' value='Transfer for funds' class='btn btn-success'>"
 						+ "<input name='donationID' type='hidden' value='" + donationID+ "'>"
 						+ "</form>"
