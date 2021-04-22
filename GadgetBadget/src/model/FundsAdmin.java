@@ -75,7 +75,7 @@ public class FundsAdmin {
 				"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
 				"			  <a href=\"\" >Home</a>\r\n" + 
 				"			  <a href=\"#\">Products</a>\r\n" + 
-				"			  <a href=\"\">Donations</a>\r\n" + 
+				"			  <a href=\"../../../GadgetBadget/DonationsService/Donations\">Donations</a>\r\n" + 
 				"			  <a href=\"\" class=\"active\">Funding HelpDesk</a>\r\n" + 
 				"			  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\r\n" + 
 				"			    <i class=\"fa fa-bars\"></i>\r\n" + 
@@ -142,7 +142,7 @@ public class FundsAdmin {
 							+ "<label>Funding amount :</label><br>"
 							+ "<input type='text' name='amount' class='form-control' placeholder='Enter funding amount' required>"
 					+ "</form></td>"
-			+ "<td><form method='post' action='../../../lab6/FundsAdminService/FundsAdmin/DeleteFundRequests'>"
+			+ "<td><form method='post' action='../../../GadgetBadget/FundsAdminService/FundsAdmin/DeleteFundRequests'>"
 					+ "<input name='btnRemove' type='submit' value='Reject' class='btn btn-danger'>"
 					+ "<input name='RequestID' type='hidden' value='" + RequestID+ "'>" 
 				+ "</form>"
@@ -297,5 +297,91 @@ public class FundsAdmin {
 		return output;
 		
 	} 
+	
+	
+	
+	
+	public String deleteFundRequests(String RequestID)
+	 {
+		 String output = "";
+			 try
+			 {
+				 Connection con = connect();
+				 if (con == null)
+				 {
+					 return "Error while connecting to the database for deleting.";
+				 }
+				 // create a prepared statement
+				 String query = "delete from fundrequests where RequestID=?";
+				 PreparedStatement preparedStmt = con.prepareStatement(query);
+				 
+				 // binding values
+				 preparedStmt.setInt(1, Integer.parseInt(RequestID));
+				 // execute the statement
+				 preparedStmt.execute();
+				 con.close();
+				 output = "Transfer for funding is successfull";
+			 }
+			 catch (Exception e)
+			 {
+				 output = "Error while transferring the donation.";
+				 System.err.println(e.getMessage());
+			 }
+		 return output;
+	 } 
+	
+	
+	
+	
+	public String insertAcceptedFunds(String UserEmail, int ProjectID, String amount,String RequestID){
+		
+		 String output = "";
+		 
+		 
+		 
+		 try{
+			 Connection con = connect();
+			 if (con == null)
+			 {
+				 return "Error while connecting to the database for inserting.";
+			 }
+			  
+			
+			 // create a prepared statement
+			 String query = " insert into accepted(`FundID`,`UserEmail`,`ProjectID`,`amount`)"+ " values (?, ?, ?, ?)";
+			
+			 
+			 PreparedStatement preparedStmt = con.prepareStatement(query);
+		
+			 
+			 // binding values
+			 preparedStmt.setInt(1, 0);
+			 preparedStmt.setString(2, UserEmail);
+			 preparedStmt.setInt(3, ProjectID);
+			 preparedStmt.setString(4, amount);
+			
+			// execute the statement
+			
+			 preparedStmt.execute();
+			 
+			 deleteFundRequests(RequestID);
+			 
+			 String query1 = "UPDATE projects SET status=2 WHERE ProjectId = '"+ProjectID+"'";
+			 PreparedStatement preparedStmt1 = con.prepareStatement(query1);
+			 
+			 preparedStmt1.execute();
+			 
+			 con.close();
+			 output = "Funding is successful";
+		 }
+		 catch (Exception e)
+		 {
+			 output = "Already accepted the fund.";
+			 System.err.println(e.getMessage());
+		 }
+		 
+		 return output;
+	 }
+	
 
 }
