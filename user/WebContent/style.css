@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+  background-color:#ffffff;
+}
+h1{
+	color:blue;
+	text-align:center;
+}
+
+button1{
+	boder-style:solid;
+	border-color:black;
+	
+}
+
+div1{
+	border:1px solid black;
+	outline-color:solid;
+	outline-style:red;
+	outline-width:4px;
+	
+}
