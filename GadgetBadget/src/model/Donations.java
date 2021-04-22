@@ -335,5 +335,43 @@ public class Donations {
 	} 	
 	
 	
+	
+	
+	//transfer for funding(delete)
+	public String deleteDonation(String donationID)
+	 {
+		 String output = "";
+			 try
+			 {
+				 Connection con = connect();
+				 if (con == null)
+				 {
+					 return "Error while connecting to the database for deleting.";
+				 }
+				 // create a prepared statement
+				 String query = "delete from donations where donationID=?";
+				 PreparedStatement preparedStmt = con.prepareStatement(query);
+				 
+				 // binding values
+				 preparedStmt.setInt(1, Integer.parseInt(donationID));
+				 // execute the statement
+				 preparedStmt.execute();
+				 con.close();
+				 output = "Transfer for funding is successfull";
+			 }
+			 catch (Exception e)
+			 {
+				 output = "Error while transferring the donation.";
+				 System.err.println(e.getMessage());
+			 }
+		 return output;
+	 } 
+		
+	
+	
+	
+	
+	
+	
 
 }
