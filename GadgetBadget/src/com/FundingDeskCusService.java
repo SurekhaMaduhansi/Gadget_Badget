@@ -27,5 +27,15 @@ FundingDeskCus FundingObject = new FundingDeskCus();
 	 {
 		return FundingObject.readProjects();
 	 }
+	
+	
+	@GET
+	@Path("/readMyProjects")
+	@Produces(MediaType.TEXT_HTML)
+	public String readMyProjects()
+	 {
+		return FundingObject.readMyProjects();
+	 }
+	
 
 }
