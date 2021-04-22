@@ -37,5 +37,18 @@ FundingDeskCus FundingObject = new FundingDeskCus();
 		return FundingObject.readMyProjects();
 	 }
 	
+	@POST
+	@Path("/insertFundRequests")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String insertFundRequests(@FormParam("RequestID") String RequestID,
+	 @FormParam("UserEmail") String UserEmail,
+	 @FormParam("ProjectID") int ProjectID,
+	 @FormParam("BankCardNumber") String BankCardNumber)
+	{
+	 String output = FundingObject.insertFundRequests(UserEmail, ProjectID,BankCardNumber);
+	return output;
+	}
+	
 
 }

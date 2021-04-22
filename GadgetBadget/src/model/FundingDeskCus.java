@@ -691,7 +691,63 @@ public class FundingDeskCus {
 			
 		} 	
 		
-	
+
+		//-------------------------SEND REQUEST FOR FUND-------------------------------------------------------------------------------//	
+		
+		public String insertFundRequests(String UserEmail, int ProjectID, String BankCardNumber){
+			
+			 String output = "";
+			 
+			 
+			 
+			 try{
+				 Connection con = connect();
+				 if (con == null)
+				 {
+					 return "Error while connecting to the database for inserting.";
+				 }
+				  
+					 
+				 // create a prepared statement
+				 String query = " insert into fundrequests(`RequestID`,`UserEmail`,`ProjectID`,`BankCardNumber`)"+ " values (?, ?, ?,?)";
+				 PreparedStatement preparedStmt = con.prepareStatement(query);
+				 
+				 // binding values
+				 preparedStmt.setInt(1, 0);
+				 preparedStmt.setString(2, UserEmail);
+				 preparedStmt.setInt(3, ProjectID);
+				 preparedStmt.setString(4, BankCardNumber);
+				 
+				// execute the statement
+				
+				 preparedStmt.execute();
+				 
+				// create a prepared statement
+				 String query1 = "UPDATE projects SET status=1 WHERE ProjectId = '"+ProjectID+"'";
+				 PreparedStatement preparedStmt1 = con.prepareStatement(query1);
+				 
+				 // binding values
+//				 preparedStmt1.setInt(9, 1);
+//				 preparedStmt1.setInt(1, ProjectID);			
+				 
+				// execute the statement
+				
+				 preparedStmt1.execute();
+				 
+				 con.close();
+				 output = "Sending the request is successful";
+			 }
+			 catch (Exception e)
+			 {
+				 output = "Already requested.";
+				 System.err.println(e.getMessage());
+			 }
+			 
+			 return output;
+		 }
+		
+		
+
 	
 	
 	
