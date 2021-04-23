@@ -97,7 +97,15 @@ public class user {
 	// execute the statement
 	 preparedStmt.execute(); 
 	 con.close(); 
-	 output = "Inserted successfully"+" <a href='../../../user/userService/user/log'>login</a>"; 
+	 output = "Inserted successfully"+
+			 	"<html>\r\n" + 
+		 		"<head>\r\n" + 
+		 		"<meta charset=\"ISO-8859-1\">\r\n" + 
+		 		" <a href=\"../../../user/logService/log\">login</a> "+
+		 		"</head>"+
+		 		"</html>";
+	
+	
 	 } 
 	 catch (Exception e) 
 	 { 
