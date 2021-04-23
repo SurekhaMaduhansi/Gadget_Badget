@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Arrays;
 
 import javax.ws.rs.core.Request;
 
@@ -27,13 +28,14 @@ public class UserHome {
 			 }
 			
 
-		public String insertCart(String email,int ID,int quantity,String price)
+		public String insertCart(String email,int ID,int quantity1,String price)
 		 {
-			 String output = "";
+			
+			 	String output = "";
 			 	int product_price = 0;
 				int product_total = 0;
 				int cart_total = 0;
-				int quantity1 = 1;
+				int quantity = 1;
 				
 				
 				int z=0;
@@ -56,19 +58,21 @@ public class UserHome {
 				
 				
 					ResultSet rs1= st.executeQuery("select * from carts where ID = '"+ID+"' and email = '"+email+"' and  address is NULL");
-
+					
 					while(rs1.next())
 					{
+						
 						cart_total = rs1.getInt(5);
 						cart_total=cart_total+product_total;
-						quantity1=rs1.getInt(3);
-						quantity1=quantity1+1;
+						quantity=rs1.getInt(3);
+						quantity=quantity+1;
 						z=1;
 					}
+					
 					if(z == 1 )
 					{
 						st.executeUpdate("update carts set total ='"+cart_total+"',quantity='"+quantity+"' where ID='"+ID+"' and email ='"+email+"' and address is null");
-						
+						output = "update successfully";
 					}
 					
 					if(z==0)
@@ -172,8 +176,8 @@ public class UserHome {
 					
 						 // buttons
 						 output += "<td><form method='post' action='../../../Products/UserHomeService/AllProducts/AddCart'>"
-										 + "<button class='button button2'>Add To Cart</button>"
-										 + "<input name='email' type='hidden' value='sa@gmail.com'>" 
+										 + "<button type='submit' class='button button2'>Add To Cart</button>"
+										 + "<input name='email' type='hidden' value='la@gmail.com'>" 
 										 + "<input name='ID' type='hidden' value='"+ID+"'>" 
 										 + "<input name='price' type='hidden' value='"+price+"'>"  
 										 + "</form></td></tr>";

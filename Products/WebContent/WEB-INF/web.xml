@@ -74,4 +74,44 @@
 	 <servlet-name>Jersey Web Application6</servlet-name>
 	 <url-pattern>/UserMessageService/*</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+	 <servlet-name>Jersey Web Application7</servlet-name>
+	 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	 <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	 <servlet-name>Jersey Web Application7</servlet-name>
+	 <url-pattern>/AdminMessageViewService/*</url-pattern>
+	</servlet-mapping>
+	
+  <servlet>
+	 <servlet-name>Jersey Web Application8</servlet-name>
+	 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	 <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	 <servlet-name>Jersey Web Application8</servlet-name>
+	 <url-pattern>/DeliveredOrdersViewService/*</url-pattern>
+	</servlet-mapping>
+	
+<servlet>
+	 <servlet-name>Jersey Web Application9</servlet-name>
+	 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	 <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	 <servlet-name>Jersey Web Application9</servlet-name>
+	 <url-pattern>/CanceledOrdersViewService/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	 <servlet-name>Jersey Web Application10</servlet-name>
+	 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	 <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	 <servlet-name>Jersey Web Application10</servlet-name>
+	 <url-pattern>/AdminCheckService/*</url-pattern>
+	</servlet-mapping>
 </web-app>

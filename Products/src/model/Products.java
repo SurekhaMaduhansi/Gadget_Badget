@@ -95,10 +95,10 @@ public class Products {
 					 		"            <center></center>\r\n" + 
 					 		"            <li><a href=\"../../../Products/addProductService/addProduct\">Add New Product <i class='fas fa-plus-square'></i></a></li>\r\n" + 
 					 		"            <li><a href=\"../../../Products/ProductsService/Products\">All Products & Edit Products <i class='fab fa-elementor'></i></a>\r\n" + 
-					 		"            <li><a href=\"messagesReceived.jsp\">Messages Received <i class='fas fa-comment-alt'></i></a></li>\r\n" + 
-					 		"            <li><a href=\"ordersReceived.jsp\">Orders Received <i class=\"fas fa-archive\"></i></a></li>\r\n" + 
-					 		"            <li><a href=\"cancelOrders.jsp\">Cancel Orders <i class='fas fa-window-close'></i></a></li>\r\n" + 
-					 		"            <li><a href=\"deliveredOrders.jsp\">Delivered Orders <i class='fas fa-dolly'></i></a></li>\r\n" + 
+					 		"            <li><a href=\"../../../Products/AdminMessageViewService/MessageView\">Messages Received <i class='fas fa-comment-alt'></i></a></li>\r\n" + 
+					 		"            <li><a href=\"../../../Products/AdminCheckService/checkbill\">Orders Received <i class=\"fas fa-archive\"></i></a></li>\r\n" + 
+					 		"            <li><a href=\"../../../Products/CanceledOrdersViewService/CanceledView\">Cancel Orders <i class='fas fa-window-close'></i></a></li>\r\n" + 
+					 		"            <li><a href=\"../../../Products/DeliveredOrdersViewService/DeliveredView\">Delivered Orders <i class='fas fa-dolly'></i></a></li>\r\n" + 
 					 		"  \r\n" + 
 					 		"          </div>\r\n" + 
 					 		"                    \r\n" + 
@@ -121,8 +121,9 @@ public class Products {
 					 		"	<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>\r\n" + 
 					 		"	<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>\r\n" + 
 					 		"	<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>\r\n" + 
-					 		"<!-- bootstrap -->"
-					 		+ "<center><table border='1'><tr><th>Product ID</th><th>Product Name</th>" +
+					 		"<!-- bootstrap -->"+
+					 		"<div style=\"color: black; text-align: center; font-size: 22px;\">All Products And Edit Products <i class='fab fa-elementor'></i></div>"+
+					 		"<br><center><table border='1' id=\"customers\"><tr><th>Product ID</th><th>Product Name</th>" +
 						      "<th>Category</th>" +
 						      "<th>Description</th>" +
 						      "<th>Quantity</th>" +

@@ -20,6 +20,8 @@ import org.jsoup.nodes.Document;
 public class UserMessageService 
 {
 	    UserMessage msgObj = new UserMessage();
+	
+	  	 
 	    @GET
 		@Path("/")
 		@Produces(MediaType.TEXT_HTML)

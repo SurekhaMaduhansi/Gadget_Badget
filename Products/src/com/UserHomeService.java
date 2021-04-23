@@ -32,14 +32,14 @@ public class UserHomeService
 		@Path("/AddCart")
 		@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 		@Produces(MediaType.TEXT_PLAIN)
-		public String insertItem(@FormParam("email") String email,
+		public String insertCart(@FormParam("email") String email,
 		@FormParam("ID") int ID,
 		@FormParam("quantity") int quantity,
 		@FormParam("price") String price,
 		@FormParam("total") String total)
 
 		{
-		String output = userHomeObj.insertCart(email,ID, quantity, price);
+		String output = userHomeObj.insertCart(email,ID, quantity, price);  
 		return output;
 		}
 		

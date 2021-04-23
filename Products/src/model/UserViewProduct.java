@@ -94,7 +94,7 @@ public class UserViewProduct {
 					// Prepare the html table to be displayed
 					 output = "<html>\r\n" + 
 					 		"<head>\r\n" + 
-					 		"<link rel=\"stylesheet\" href=\"../css/homee-style.css\">\r\n" + 
+					 		"<link rel=\"stylesheet\" href=\"../css/userHome.css\">\r\n" + 
 					 		"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n" + 
 					 		"<script src='https://kit.fontawesome.com/a076d05399.js'></script>\r\n" + 
 					 		"</head>\r\n" + 
@@ -136,7 +136,7 @@ public class UserViewProduct {
 						      "<th>Transaction ID</th>" +
 						      "<th>Status</th>";
 					
-					 String query = " select *from carts inner join products where carts.product_id=products.ID and carts.email like 'sa@gmail.com' and carts.order_date is not NULL ";;
+					 String query = " select *from carts inner join products where carts.ID  and carts.email like 'sa@gmail.com' and carts.order_date is not NULL ";
 					 Statement stmt = con.createStatement();
 					 ResultSet rs = stmt.executeQuery(query);
 					 
@@ -145,7 +145,7 @@ public class UserViewProduct {
 					 while (rs.next())
 					 {
 						 String email=rs.getString("email");
-						 String product_id = Integer.toString(rs.getInt("product_id"));
+						 String ID = Integer.toString(rs.getInt("ID"));
 						 String quantity = Integer.toString(rs.getInt("quantity"));
 						 String price = Integer.toString(rs.getInt("price"));
 						 String total = Integer.toString(rs.getInt("total"));
@@ -160,7 +160,7 @@ public class UserViewProduct {
 						 
 						 // Add into the html table
 						 output += "<tr><td>" + email + "</td>";
-						 output += "<td>" + product_id + "</td>";
+						 output += "<td>" + ID + "</td>";
 						 output += "<td>" + quantity + "</td>";
 						 output += "<td>" + price + "</td>";
 						 output += "<td>" + total + "</td>";

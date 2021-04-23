@@ -5,89 +5,144 @@
   background-color:#ffffff;
 }
 
-table {
-  border: 2px solid #2e3131;
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+
   border-collapse: collapse;
   box-shadow: 0 30px 50px 0 black;
-  margin: 20;
-  padding: 20px;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #cf000f;
+  color: white;
+}
+
+
+
+
+#pr {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
   width: 90%;
-  table-align:center;
-  table-layout: fixed;
+
+  border-collapse: collapse;
+  box-shadow: 0 30px 50px 0 black;
 }
 
-table caption {
-  font-size: 1.5em;
-  margin: .5em 0 .75em;
+#pr td, #pr th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-table tr {
-  background-color: #36d7b7;
-  border: 2px solid #ffffff;
-  padding: .35em;
+#pr tr:nth-child(even){background-color: #f2f2f2;}
+
+#pr tr:hover {background-color: #ddd;}
+
+#pr th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ffffcc;
+  color: black;
 }
 
-table th,
-table td {
-  padding: .625em;
-  text-align: center;
+
+
+
+#prx {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+
+  border-collapse: collapse;
+  box-shadow: 0 30px 50px 0 black;
 }
 
-table th {
-  font-size: .85em;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+#prx td, #prx th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-@media screen and (max-width: 600px) {
-  table {
-    border: 1;
-  }
+#prx tr:nth-child(even){background-color: #f2f2f2;}
 
-  table caption {
-    font-size: 1.3em;
-  }
-  
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: 3px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  
-  table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: .625em;
-  }
-  
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: .8em;
-    text-align: right;
-  }
-  
-  table td::before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  table td:last-child {
-    border-bottom: 0;
-  }
+#prx tr:hover {background-color: #89c4f4;}
+
+#prx th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #29f1c3;
+  color: black;
 }
 
+
+#prr {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+
+  border-collapse: collapse;
+  box-shadow: 0 30px 50px 0 black;
+}
+
+#prr td, #prr th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#prr tr:nth-child(even){background-color: #fff68f;}
+
+#prr tr:hover {background-color: #ddd;}
+
+#prr th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f4d03f;
+  color: black;
+}
+
+
+
+#prrc {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+
+  border-collapse: collapse;
+  box-shadow: 0 30px 50px 0 black;
+}
+
+#prrc td, #prr th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#prrc tr:nth-child(even){background-color: #FADBD8;}
+
+#prrc tr:hover {background-color: #ddd;}
+
+#prrc th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #d91e18;
+  color: white;
+}
   .topnav .search-container {
       float: right;
     }
@@ -236,10 +291,20 @@ table th {
 .button3 {
   background-color: white; 
   color: black; 
-  border: 3px solid #cf000f;
+  border: 3px solid #d91e18;
 }
 .button3:hover {
-  background-color: #cf000f;
+  background-color: #d91e18;
+  color: white;
+}
+
+.button33 {
+  background-color: white; 
+  color: black; 
+  border: 3px solid #2abb9b;
+}
+.button33:hover {
+  background-color: #2abb9b;
   color: white;
 }
 .button2:hover {

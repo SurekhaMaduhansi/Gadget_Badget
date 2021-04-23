@@ -97,12 +97,12 @@ public class addProduct {
 			 		"    \r\n" + 
 			 		"         \r\n" + 
 			 		"            <center></center>\r\n" + 
-			 		"            <li><a  href=\"AddProduct.jsp\">Add New Product <i class='fas fa-plus-square'></i></a></li>\r\n" + 
+			 		"            <li><a  href=\"../../../Products/addProductService/addProduct\">Add New Product <i class='fas fa-plus-square'></i></a></li>\r\n" + 
 			 		"            <li><a href=\"../../../Products/ProductsService/Products\">All Products & Edit Products <i class='fab fa-elementor'></i></a>\r\n" + 
-			 		"            <li><a href=\"messagesReceived.jsp\">Messages Received <i class='fas fa-comment-alt'></i></a></li>\r\n" + 
-			 		"            <li><a href=\"ordersReceived.jsp\">Orders Received <i class=\"fas fa-archive\"></i></a></li>\r\n" + 
-			 		"            <li><a href=\"cancelOrders.jsp\">Cancel Orders <i class='fas fa-window-close'></i></a></li>\r\n" + 
-			 		"            <li><a href=\"deliveredOrders.jsp\">Delivered Orders <i class='fas fa-dolly'></i></a></li>\r\n" + 
+			 		"            <li><a href=\"../../../Products/AdminMessageViewService/MessageView\">Messages Received <i class='fas fa-comment-alt'></i></a></li>\r\n" + 
+			 		"            <li><a href=\"../../../Products/AdminCheckService/checkbill\">Orders Received <i class=\"fas fa-archive\"></i></a></li>\r\n" + 
+			 		"            <li> <a href=\"../../../Products/CanceledOrdersViewService/CanceledView\">Cancel Orders <i class='fas fa-window-close'></i></a></li>\r\n" + 
+			 		"            <li> <a href=\"../../../Products/DeliveredOrdersViewService/DeliveredView\">Delivered Orders <i class='fas fa-dolly'></i></a></li>\r\n" + 
 			 		"  \r\n" + 
 			 		"          </div>\r\n" + 
 			 		"                    \r\n" + 
