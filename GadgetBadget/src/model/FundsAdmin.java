@@ -144,7 +144,8 @@ public class FundsAdmin {
 					+ "</form></td>"
 			+ "<td><form method='post' action='../../../GadgetBadget/FundsAdminService/FundsAdmin/DeleteFundRequests'>"
 					+ "<input name='btnRemove' type='submit' value='Reject' class='btn btn-danger'>"
-					+ "<input name='RequestID' type='hidden' value='" + RequestID+ "'>" 
+					+ "<input name='RequestID' type='hidden' value='" + RequestID+ "'>"
+					+ "<input name='ProjectID' type='hidden' value='"+ProjectID+"'>" 
 				+ "</form>"
 			+ "</td></tr>"
 			+ "</tbody>";
@@ -301,7 +302,7 @@ public class FundsAdmin {
 	
 	
 	
-	public String deleteFundRequests(String RequestID)
+	public String deleteFundRequests(String RequestID, int ProjectID)
 	 {
 		 String output = "";
 			 try
@@ -319,8 +320,16 @@ public class FundsAdmin {
 				 preparedStmt.setInt(1, Integer.parseInt(RequestID));
 				 // execute the statement
 				 preparedStmt.execute();
+				 
+				 
+				 String query1 = "UPDATE projects SET status=3 WHERE ProjectId = '"+ProjectID+"'";
+				 PreparedStatement preparedStmt1 = con.prepareStatement(query1);
+				 
+				 preparedStmt1.execute();
+				 
+				 
 				 con.close();
-				 output = "Transfer for funding is successfull";
+				 output = "Rejected";
 			 }
 			 catch (Exception e)
 			 {
@@ -364,7 +373,7 @@ public class FundsAdmin {
 			
 			 preparedStmt.execute();
 			 
-			 deleteFundRequests(RequestID);
+			 deleteFundRequests(RequestID,ProjectID);
 			 
 			 String query1 = "UPDATE projects SET status=2 WHERE ProjectId = '"+ProjectID+"'";
 			 PreparedStatement preparedStmt1 = con.prepareStatement(query1);

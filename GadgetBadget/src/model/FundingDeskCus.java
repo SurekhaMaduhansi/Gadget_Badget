@@ -534,6 +534,8 @@ public class FundingDeskCus {
 							
 				}else if(status == 2) {
 					output +=  "<td><div class='badge badge-success'> Request Accepted </div></td>";
+				}else if(status == 3) {
+					output +=  "<td><div class='badge badge-danger'> Request Rejected </div></td>";
 				}
 				
 				output +=  "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-primary'></td>"

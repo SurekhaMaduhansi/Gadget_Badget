@@ -49,9 +49,10 @@ public class FundsAdminService {
 	@Path("/DeleteFundRequests")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
-	public String Delete(@FormParam("RequestID") String RequestID) throws SQLException
+	public String Delete(@FormParam("RequestID") String RequestID,
+			@FormParam("ProjectID") int ProjectID) throws SQLException
 	{
-		String output = fundRequests.deleteFundRequests(RequestID);
+		String output = fundRequests.deleteFundRequests(RequestID,ProjectID);
 		return output;
 
 	}
