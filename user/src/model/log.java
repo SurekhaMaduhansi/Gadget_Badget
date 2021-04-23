@@ -334,7 +334,7 @@ public class log {
 	
 	}*/
 	
-	public String getuserDetails(String email)
+	/*public String getuserDetails(String email)
 	{
 		 String output = ""; 
 		
@@ -355,7 +355,7 @@ public class log {
 				String lname=rs.getString(3);
 				String type=rs.getString(4);
 				String phone=rs.getString(5);
-				String passU=rs.getString(7);
+				String passU=rs.getString(6);
 				
 				
 
@@ -368,7 +368,7 @@ public class log {
 		
 		return output;
 		
-	}
+	}*/
 
 	
 	
