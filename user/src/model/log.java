@@ -295,8 +295,9 @@ public class log {
 		 
 	} 
 	
-	
-	/*public boolean validate(String email ,String password){
+	//validate the user loging
+		
+	public boolean validate(String email ,String password){
 		 boolean isSucess = false;
 		ArrayList<user> us =new ArrayList<>();
 				
@@ -332,9 +333,10 @@ public class log {
 		return isSucess;
 		
 	
-	}*/
+	}
 	
-	/*public String getuserDetails(String email)
+	//getting user details
+	public String getuserDetails(String email)
 	{
 		 String output = ""; 
 		
@@ -368,7 +370,7 @@ public class log {
 		
 		return output;
 		
-	}*/
+	}
 
 	
 	
