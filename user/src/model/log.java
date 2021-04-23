@@ -10,6 +10,7 @@ import java.util.List;
 
 import model.user;
 import com.logService;
+import com.mysql.cj.Session;
 
 
 public class log {
@@ -85,8 +86,7 @@ public class log {
 			 		"			<div class=\"dropdown\">\r\n" + 
 			 		"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"78\" >\r\n" + 
 			 		"			  <div class=\"dropdown-content\">\r\n" + 
-			 		"			    <a href=\"../../../user/adduserService/adduser\">Sign Up</a>\r\n" + 
-			 		"			    <a href=\"#\">Log In</a>\r\n" + 
+			 		
 			 		"			  </div>\r\n" + 
 			 		"			</div>\r\n" + 
 			 		"			\r\n" + 
@@ -99,58 +99,15 @@ public class log {
 			 		"  <img class=\"card-img-top\" src=\"../images/admin.jpg\" alt=\"Card image cap\"  height=\"510\">\r\n" + 
 			 		"  <br><br>\r\n" + 
 			 		"  \r\n" + 
-			 		"  <center><h5 style=\"color:blue\"> What we do </h5>\r\n" + 
-			 		"  		<h4>Funds innovative projects & help young researchers...</h4>\r\n" + 
-			 		"  		<h4>Sell quality products...</h4>\r\n" + 
-			 		"  </center>\r\n" + 
-			 		"  \r\n" + 
-			 		" <br><br>\r\n" + 
-			 		" \r\n" + 
-			 		" \r\n" + 
-			 		"<div class=\"card-deck\">\r\n" + 
-			 		"  <div class=\"card\">\r\n" + 
-			 		"    <div class=\"card-body\" >\r\n" + 
-			 		"      <h5 class=\"card-title\" class=\"about\" style=\"color:#81cfe0\">About Us</h5>\r\n" + 
-			 		"    <blockquote class=\"blockquote mb-0 card-body\">\r\n" + 
-			 		"      <p>GadgetBudget is a leading company in funding young researchers for their innovative projects & selling products.<br>\r\n" + 
-			 		"	     We have 20 years experience in the industry through helping the researchers and satisfy their financial necessities.<br>We give the fullest support\r\n" + 
-			 		"	     to achieve customer satisfaction.<br> We lower the thresholds to resources while increasing the chance for success and acceleration.<br>\r\n" + 
-			 		"	     GadgetBadget has been supporting innovative life science academic and entrepreneurs in all the sectors.<br>\r\n" + 
-			 		"	     Our company offers the best products.</p>\r\n" + 
-			 		"    </blockquote>\r\n" + 
-			 		"    </div>\r\n" + 
-			 		"  </div>\r\n" + 
-			 		"\r\n" + 
-			 		"  \r\n" + 
-			 		"  <div class=\"card\">\r\n" + 
-			 		"    <img class=\"card-img-top\" src=\"../images/our-team.jpg\" alt=\"Card image cap\">\r\n" + 
-			 		"  </div>\r\n" + 
-			 		" </div>\r\n" + 
-			 		"<br><br><br>\r\n" + 
-			 		" \r\n" + 
-			 		"  \r\n" + 
-			 		"  <section id=\"row-number-2\" class=\"text-left-image-right row-number-2\">\r\n" + 
-			 		"        <div class=\"container-fluid\">\r\n" + 
-			 		"        <div class=\"row\">\r\n" + 
-			 		"            <div  class=\"ourmission\">                \r\n" + 
-			 		"            </div>\r\n" + 
-			 		"        </div>        \r\n" + 
-			 		"    </div>\r\n" + 
-			 		"    <div class=\"container\">\r\n" + 
-			 		"        <div class=\"row\">\r\n" + 
-			 		"            <div class=\"col-12 col-md-5 content\">\r\n" + 
-			 		"                <div class=\"wrapper-content\">\r\n" + 
-			 		"                    <h3>Our mission</h3>\r\n" + 
-			 		"                    <h2>Innovative ideas deserve a chance to reach their potential</h2>\r\n" + 
-			 		"                    <p>As experts in non-dilutive funding, we help entrepreneurs and academics succeed in a competitive arena.</p>\r\n" + 
-			 		"                </div>\r\n" + 
-			 		"            </div>\r\n" + 
-			 		"        </div>\r\n" + 
-			 		"    </div>    \r\n" + 
-			 		"</section>\r\n" + 
-			 		"<br><br>\r\n" + 
-			 		"<br><br>\r\n" + 
-			 		"<!-- ============================================================================================================= -->\r\n" + 
+			 		"<!-- ============================================================================================================= -->\r\n"
+			 		+ ""
+			 		+ "<form action='../../../user/logService/log/logUser' method='post'>"
+			 		+ "<label>Email</label>"
+			 		+ "<input type='text' name='UserEmail'><br>"
+			 		+ "<label>password</label>"
+			 		+ "<input type='password' name='password'>"
+			 		+ "<input type='submit' value='Submit'>"
+			 		+ "</form>" + 
 			  
 			 		"<!-- ============================================================================================================= -->\r\n" + 
 			 		"<!-- Footer -->\r\n" + 
@@ -294,6 +251,58 @@ public class log {
 		 return output; 
 		 
 	} 
+		
+		
+		
+		
+		public String login(String UserEmail, String password)
+		{
+			
+			String output = ""; 
+			 try
+			 { 
+			 Connection con = connect(); 
+			 if (con == null) 
+			 {return "Error while connecting to the database for inserting."; } 
+			 // create a prepared statement
+			 String query =  "select UserEmail, password, type from users where UserEmail='"+UserEmail+"'";
+			 
+			 Statement stmt = con.createStatement(); 
+			 ResultSet rs = stmt.executeQuery(query);
+			 String get_password = "";
+			 String get_type = "";
+			 int i =0;
+			 while(rs.next()) {
+				 get_password = rs.getString("password");
+				 get_type = rs.getString("type");
+				 i++;
+			 }
+			 
+			 if(i>0) {
+				 
+				 
+				 if(get_password.equals(password)) {
+					 
+					 System.out.println("logged in");
+					 
+					 
+				 }else {
+					 System.out.println("Password Password incorrect");
+				 }
+			 }else {
+				 System.out.println("Username Password incorrect");
+			 }
+			 con.close(); 
+			 output = "";
+			
+			 } 
+			 catch (Exception e) 
+			 { 
+			 output = "Error while inserting the item."; 
+			 System.err.println(e.getMessage()); 
+			 } 
+			 return output; 
+		}
 	
 	//validate the user loging
 		

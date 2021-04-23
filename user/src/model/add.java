@@ -3,6 +3,7 @@ package model;
 
 import java.sql.Connection;
 
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -96,7 +97,7 @@ public class add {
 		 		+ "<h5 style='color:red'>Enter your details....</h5><br>" + 
 		 		" <center><form action='../../../user/userService/user/add' method='post' style='width:30rem'>" + 
 		 		"	<label for=\"exampleFormControlInput1\">Email address</label>\r\n" + 
-		 		"	<input class=\"form-control\" type=\"text\" placeholder=\"Enter email\" name=\"email\" required><br>\r\n" + 
+		 		"	<input class=\"form-control\" type=\"text\" placeholder=\"Enter email\" name=\"UserEmail\" required><br>\r\n" + 
 		 		"	\r\n" + 
 		 		"	<label for=\"exampleFormControlInput1\">First Name</label>\r\n" + 
 		 		"	<input class=\"form-control\" type=\"text\" placeholder=\"Enter first name\" name=\"firstName\" required><br>\r\n" + 
