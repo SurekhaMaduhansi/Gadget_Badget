@@ -94,9 +94,10 @@ public class FundsAdmin {
 				"	\r\n" + 
 				"<!-- navigation bar -->\r\n" + 
 				"	<br>\r\n" + 
-				"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\">\r\n" + 
-				"  <br><br><br>"
-				+ "<center><table class=\"table\"><thead class=\"thead-dark\">"
+				"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\"><br><br>"
+				+ "<form action='' method='post'>"
+				+ "<button type=\"button\" class=\"btn btn-info\" style='float:right'>View Accepted Fund Requests</button><br><br></form>"
+				+ "<center><table class=\"table\"><thead class=\"thead-dark\" style='width:600'>"
 				+ "<tr>"
 					+ "<th scope=\"col\">Request ID</th>"
 					+ "	<th scope=\"col\">Project ID</th>"
@@ -153,7 +154,7 @@ public class FundsAdmin {
 		
 			con.close();
 			// Complete the html table
-			output += "</table></center>"
+			output += "</table></center><br><br>"
 					+ "<footer class=\"page-footer font-small color-dark\" style=\"background-color:#1f3a93\">\r\n" + 
 					"\r\n" + 
 					"  <div style=\"background-color: #59abe3;\">\r\n" + 
