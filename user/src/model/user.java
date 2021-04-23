@@ -97,7 +97,7 @@ public class user {
 	// execute the statement
 	 preparedStmt.execute(); 
 	 con.close(); 
-	 output = "Inserted successfully"; 
+	 output = "Inserted successfully"+" <a href='../../../user/userService/user/log'>login</a>"; 
 	 } 
 	 catch (Exception e) 
 	 { 
@@ -355,7 +355,7 @@ public class user {
 	
 	
 	
-	public String updateUser(String ID, String firstName, String lastName, String type,String phone, String password)
+	public String updateUser(String email, String firstName, String lastName, String type,String phone, String password)
 	{ 
 		 String output = ""; 
 		 try

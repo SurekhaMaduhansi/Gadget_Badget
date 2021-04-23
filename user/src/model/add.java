@@ -116,7 +116,7 @@ public class add {
 		 		"	<input class=\"form-control\" type=\"text\" placeholder=\"Enter your contact number\" name=\"phone\" required><br>\r\n" + 
 		 		"	\r\n" + 
 		 		"	<label for=\"exampleFormControlInput1\">Password</label>\r\n" + 
-		 		"	<input class=\"form-control\" type=\"text\" placeholder=\"Enter your password\" name=\"password\" required><br>\r\n" + 
+		 		"	<input class=\"form-control\" type=\"password\" placeholder=\"Enter your password\" name=\"password\" required><br>\r\n" + 
 		 		"	\r\n" + 
 		 		"	\r\n" + 
 		 		"	<input type='submit' value='Save Details' class='btn btn-success' >" + 

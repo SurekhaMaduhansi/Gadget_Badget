@@ -372,9 +372,4 @@ public class log {
 		
 	}
 
-	
-	
-	
-	
-
 }
