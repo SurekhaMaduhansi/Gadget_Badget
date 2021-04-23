@@ -45,5 +45,33 @@
 	 <url-pattern>/addProductService/*</url-pattern>
 	</servlet-mapping>
  
+ 	<servlet>
+	 <servlet-name>Jersey Web Application4</servlet-name>
+	 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	 <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	 <servlet-name>Jersey Web Application4</servlet-name>
+	 <url-pattern>/UserViewProductService/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	 <servlet-name>Jersey Web Application5</servlet-name>
+	 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	 <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	 <servlet-name>Jersey Web Application5</servlet-name>
+	 <url-pattern>/UserHomeService/*</url-pattern>
+	</servlet-mapping>
  
+ 	<servlet>
+	 <servlet-name>Jersey Web Application6</servlet-name>
+	 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	 <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	 <servlet-name>Jersey Web Application6</servlet-name>
+	 <url-pattern>/UserMessageService/*</url-pattern>
+	</servlet-mapping>
 </web-app>

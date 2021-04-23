@@ -15,9 +15,9 @@ public class addProduct {
 		 Connection con = null;
 		 try
 		 {
-		 Class.forName("com.mysql.jdbc.Driver");
-		
-		 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projectmanagement", "root", "");
+			 Class.forName("com.mysql.cj.jdbc.Driver");
+				
+			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projectmanagement?useTimezone=true&serverTimezone=UTC", "root", "");
 
 		 }
 		 catch (Exception e)

@@ -129,7 +129,6 @@ public class Products {
 						      "<th>Price</th>" +
 						      "<th>Status</th>" +
 						      "<th>Update Details</th><th>Remove Details</th></tr>";
-
 					 String query = "select * from products";
 					 Statement stmt = con.createStatement();
 					 ResultSet rs = stmt.executeQuery(query);
