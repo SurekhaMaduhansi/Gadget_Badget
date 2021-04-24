@@ -96,9 +96,9 @@ public class FundsAdmin {
 				"	<br>\r\n" + 
 				"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\"><br><br>"
 				+ "<form action='../../../GadgetBadget/FundsAdminService/FundsAdmin/readAcceptedFunds' method='get'>"
-				+ "<input name='btnView' type='submit' class='btn btn-info' value='View Accepted Funds' style='float:right'><br>"
+				+ "<input name='btnView' type='submit' class='btn btn-info' value='View Accepted Funds'><br><br>"
 				+ "</form>"
-				+ "<center><table class=\"table\"><thead class=\"thead-dark\" style='width:600'>"
+				+ "<center><table class=\"table\" style='width:1300px'><thead class=\"thead-dark\" style='width:600'>"
 				+ "<tr>"
 					+ "<th scope=\"col\">Request ID</th>"
 					+ "	<th scope=\"col\">Project ID</th>"
@@ -106,11 +106,12 @@ public class FundsAdmin {
 					+"<th scope=\"col\">Description</th>" 
 					+"<th scope=\"col\">Budget</th>" 
 					+"<th scope=\"col\">User Email</th>" 
+					+"<th scope=\"col\">Bank Card</th>" 
 					+"<th scope=\"col\"></th>"
 					+ "<th scope=\"col\"></th></tr>"
 					+ "</thead>";
 		
-		String query = "select P.ProjectName, P.ProjectID, P.Description,P.Budget, P.UserEmail,F.RequestID"
+		String query = "select P.ProjectName, P.ProjectID, P.Description,P.Budget, P.UserEmail,F.RequestID,F.BankCardNumber"
 				+ " from fundrequests F, projects P "
 				+ "where F.ProjectID=P.ProjectID ";
 		Statement stmt = con.createStatement();
@@ -125,6 +126,7 @@ public class FundsAdmin {
 			String Description = rs.getString("Description");
 			String Budget = rs.getString("Budget");
 			String UserEmail = rs.getString("UserEmail");
+			String BankCardNumber= rs.getString("BankCardNumber");
 			// Add into the html table
 			output += "<tbody>"
 					+ "<tr>"
@@ -134,6 +136,7 @@ public class FundsAdmin {
 			output += "<td>" + Description + "</td>";
 			output += "<td>" + Budget + "</td>";
 			output += "<td>" + UserEmail + "</td>";
+			output += "<td>" + BankCardNumber + "</td>";
 			
 			// buttons
 			output += "<td><form method='post' action='../../../GadgetBadget/FundsAdminService/FundsAdmin/accept'><input name='btnAccept' type='submit' value='Accept Request' class='btn btn-success' id='myButton' onclick='change()'>"
@@ -465,7 +468,7 @@ public class FundsAdmin {
 				"  <img class=\"card-img-top\" src=\"../../../GadgetBadget/images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\">\r\n" + 
 				"  <br><br><br>"
 				+ "<br><br>"
-				+ "<center><table class=\"table\" style=\"width:850px\"><thead><tr><th>Fund ID</th>" +
+				+ "<center><table class=\"table\" style='width:850px'><thead><tr><th>Fund ID</th>" +
 		"<th scope=\"col\">Project Name</th>" +
 		"<th scope=\"col\">Reseacher Email</th>" +
 		"<th scope=\"col\">Funded amount</th>" +

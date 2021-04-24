@@ -125,7 +125,7 @@ public class FundingDeskCus {
 				"  \r\n" + 
 				"  \r\n" + 
 				"  <center><h3> Welcome to GadgetBadget </h3>\r\n" + 
-				"  		<h2>Hope to donate and help young researchers ??</h2>"
+				"  		<h5>Hope to donate and help young researchers ??</h5>"
 				+ "<br>"
 				+ " <button type=\"button\" class=\"btn btn-info btn-lg\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\r\n" + 
 				"  		Donate for projects\r\n" + 
@@ -147,31 +147,31 @@ public class FundingDeskCus {
 				"		    <label  class=\"col-sm-2 col-form-label\">Name</label>\r\n" + 
 				"		    <div class=\"col-sm-10\">\r\n" + 
 				"		      <input type=\"hidden\" name=\"donationID\">\r\n" + 
-				"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter your Name\" name=\"name\">\r\n" + 
+				"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter your Name\" name=\"name\" required>" + 
 				"		    </div>\r\n" + 
 				"		  </div>\r\n" + 
 				"		  <div class=\"form-group row\">\r\n" + 
-				"		    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Email</label>\r\n" + 
-				"		    <div class=\"col-sm-10\">\r\n" + 
-				"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter your Email\" name=\"email\">\r\n" + 
+				"		    <label for=\"inputEmail3\" class=\"col-sm-2 col-form-label\">Email</label>" + 
+				"		    <div class=\"col-sm-10\">" + 
+				"		      <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\"  placeholder=\"Enter your Email\" name=\"email\" required>" + 
 				"		    </div>\r\n" + 
 				"		  </div>\r\n" + 
 				"		  <div class=\"form-group row\">\r\n" + 
 				"		    <label class=\"col-sm-2 col-form-label\">Amount</label>\r\n" + 
 				"		    <div class=\"col-sm-10\">\r\n" + 
-				"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter donating amount\" name=\"amount\">\r\n" + 
+				"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter donating amount\" name=\"amount\" required>\r\n" + 
 				"		    </div>\r\n" + 
 				"		  </div>\r\n" + 
 				"		  <div class=\"form-group row\">\r\n" + 
 				"		    <label  class=\"col-sm-2 col-form-label\">Card Number</label>\r\n" + 
 				"		    <div class=\"col-sm-10\">\r\n" + 
-				"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter your card number\" name=\"cardNumber\">\r\n" + 
+				"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter your card number\" name=\"cardNumber\" required>\r\n" + 
 				"		    </div>\r\n" + 
 				"		  </div>\r\n" + 
 				"		  <div class=\"form-group row\">\r\n" + 
 				"		    <label  class=\"col-sm-2 col-form-label\">CVC</label>\r\n" + 
 				"		    <div class=\"col-sm-10\">\r\n" + 
-				"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter your CVC\" name=\"CVC\">\r\n" + 
+				"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter your CVC\" name=\"CVC\" required>\r\n" + 
 				"		    </div>\r\n" + 
 				"		  </div>\r\n" + 
 				"		  \r\n" + 
@@ -184,7 +184,7 @@ public class FundingDeskCus {
 				"    </div>\r\n" + 
 				"  </div>\r\n" + 
 				"</div>"
-				+ "<center><h5>--------------Current Projects--------------</h5><br><br>"
+				+ "<br><br><center><h5>--------------Current Projects--------------</h5><br><br>"
 				+ "<div class=\"card mb-3\" style=\"width:900px\">";
 		
 		String query = "select * from projects";
@@ -467,21 +467,22 @@ public class FundingDeskCus {
 					"</div>" + 
 					"  <br><br><br>" + 
 					"  \r\n" +  
-					"  <center><h3> Welcome to GadgetBadget </h3></center>\r\n" + 
+					"  <center><h5> Welcome to GadgetBadget </h5></center>\r\n" + 
 					" <br>\r\n" + 
-					"<center><h5>projects you have submitted will be appeared here</h5>\r\n" + 
+					"<center><h6 style='color:blue'>projects you have submitted will be appeared here</h6>"
+					+ 
 					"<br>" + 
-					"<table class=\"table\" >\r\n" + 
+					"<table class=\"table\" style='width:1300px' >" + 
 					"  <thead class=\"thead-dark\">\r\n" + 
 					"    <tr>\r\n" + 
 					"      <th scope=\"col\">id</th>\r\n" + 
 					"      <th scope=\"col\">Project Code</th>\r\n" + 
 					"      <th scope=\"col\">Project Name</th>\r\n" + 
-					"      <th scope=\"col\">Description</th>\r\n" + 
+					"      <th style='width:300px'>Description</th>\r\n" + 
 					"      <th scope=\"col\">Budget</th>\r\n" + 
 					"      <th scope=\"col\">Category</th>\r\n" + 
 					"      <th scope=\"col\">User Email</th>\r\n" + 
-					"      <th scope=\"col\"></th>\r\n" + 
+					"      <th scope=\"col\">Status</th>\r\n" + 
 					"      <th scope=\"col\"></th>\r\n" + 
 					"      <th scope=\"col\"></th>\r\n" + 
 					"    </tr></thead>";
