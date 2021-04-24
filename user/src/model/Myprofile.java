@@ -297,7 +297,7 @@ public class Myprofile {
 			 		"<head>\r\n" + 
 			 		"<meta charset=\"ISO-8859-1\">\r\n" + 
 			 		"\r\n" + 
-			 		"	<link rel=\"stylesheet\" href=\"Home.css\">\r\n" + 
+			 		"	<link rel=\"stylesheet\" href=\"../../../user/Home.css\">\r\n" + 
 			 		"	<!-- bootstrap -->\r\n" + 
 			 		"	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
 			 		"		\r\n" + 
@@ -318,7 +318,7 @@ public class Myprofile {
 			 		"  <nav  class=\"navbar fixed-top navbar-white bg-white\">\r\n" + 
 			 		"		<div class= \"container\">\r\n" + 
 			 		"			<a class=\"navbar-brand\" href=\"#\">\r\n" + 
-			 		"     			 <img src=\"../images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
+			 		"     			 <img src=\"../../../user/images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
 			 		"   			</a>\r\n" + 
 			 		"   			<br>\r\n" + 
 			 		"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
@@ -333,11 +333,10 @@ public class Myprofile {
 			 		"			  </a>\r\n" + 
 			 		"			\r\n" + 
 			 		"			</div>\r\n" + 
-			 		"			\r\n" + 
-			 		"			<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button>\r\n" + 
-			 		"      \r\n" + 
+			 		"			\r\n" +
+			 		
 			 		"			<div class=\"dropdown\">\r\n" + 
-			 		"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
+			 		"			   <img src=\"../../../user/images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
 			 		"			  <div class=\"dropdown-content\">\r\n" + 
 			 		
 			 						"<form action='../../../user/userService/user/view\' method='post'><input type='submit' value ='View Profile'>"
@@ -350,7 +349,7 @@ public class Myprofile {
 			 		"	\r\n" + 
 			 		"<!-- navigation bar -->\r\n" + 
 			 		"	<br>\r\n" + 
-			 		"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\">\r\n" + 
+			 		"  <img class=\"card-img-top\" src=\"../../../user/images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\">\r\n" + 
 			 		"  <br><br><br>"
 			 		+ "<center><table border='1'><tr><th>email</th><th>First Name</th>" +
 			 "<th>Last Name</th>" + 
@@ -377,7 +376,7 @@ public class Myprofile {
 		 output += "<td>" + phone + "</td>";
 		 output += "<td>" + password + "</td>";
 		 // buttons
-		 output +=  "<td><form method='post' action=''>"
+		 output +=  "<td><form method='post' action='../../../user/userService/user/Delete'>"
 		 +"<input name='btndelete' type='submit' value='detele' class='btn btn-info'></td>"
 		 + "<td><input name='btnUpdate' type='submit' value='Update' class='btn btn-info'></td>"
 		 + "<input name='UserEmail' type='hidden' value='" + UserEmail 

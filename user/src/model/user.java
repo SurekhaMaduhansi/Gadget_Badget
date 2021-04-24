@@ -118,8 +118,7 @@ public class user {
 		 		"			\r\n" + 
 		 		"			</div>\r\n" + 
 		 		"			\r\n" + 
-		 		"			<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button>\r\n" + 
-		 		"      \r\n" + 
+		 				
 		 		"			<div class=\"dropdown\">\r\n" + 
 		 		"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
 		 		"			  <div class=\"dropdown-content\">\r\n" + 
