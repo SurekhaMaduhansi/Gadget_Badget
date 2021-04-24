@@ -1,5 +1,8 @@
 package model;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,6 +10,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+
+import org.jsoup.helper.HttpConnection.Response;
 
 import model.user;
 import com.logService;
@@ -99,17 +108,23 @@ public class log {
 			 		"  <img class=\"card-img-top\" src=\"../images/admin.jpg\" alt=\"Card image cap\"  height=\"510\">\r\n" + 
 			 		"  <br><br>\r\n" + 
 			 		"  \r\n" + 
-			 		"<!-- ============================================================================================================= -->\r\n"
-			 		+ ""
+			 		"<!-- ================form============================================================================================= -->\r\n"
+			 		+"<center>"
+			 		+ "	\"<div class=\\\"card border-primary mb-3\\\" style=\\\"max-width: 35rem;\\\">\\r\\n\"\r\n" 
+			 		+" \"<h5 style='color:red'>Enter your details....</h5><br>\" "
 			 		+ "<form action='../../../user/logService/log/logUser' method='post'>"
-			 		+ "<label>Email</label>"
-			 		+ "<input type='text' name='UserEmail'><br>"
-			 		+ "<label>password</label>"
-			 		+ "<input type='password' name='password'>"
-			 		+ "<input type='submit' value='Submit'>"
-			 		+ "</form>" + 
-			  
-			 		"<!-- ============================================================================================================= -->\r\n" + 
+			 		
+			 		+"<label for=\"exampleFormControlInput1\">Email address</label>\r\n" 
+			 		+"<input class=\"form-control\" type=\"text\" placeholder=\"Enter email\" name=\"email\" required>"
+			 		
+			 		+"<label for=\"exampleFormControlInput1\">Password</label>\r\n" 
+			 		+"<input class=\"form-control\" type=\"text\" placeholder=\"Enter your password\" name=\"password\" required>"
+			 		
+			 		+"<input type='submit' value='' class='btn btn-success' >\" + \r\n" 
+			 		+ "</form>" 
+			 		+"</center>"+
+			 	
+			 		"<!-- ======================end of the form======================================================================================= -->\r\n" + 
 			 		"<!-- Footer -->\r\n" + 
 			 		"<footer class=\"page-footer font-small color-dark\" style=\"background-color:#1f3a93\">\r\n" + 
 			 		"\r\n" + 
@@ -283,7 +298,18 @@ public class log {
 				 
 				 if(get_password.equals(password)) {
 					 
-					 System.out.println("logged in");
+					
+					 
+					 if(get_type.equals("admin")) {
+						 
+						 System.out.println("logged in as a admin");
+						 
+					 }else if(get_type.equals("customer")) {
+						 System.out.println("logged in as a customer");
+					 }else {
+						 System.out.println("logged in user type cannot found!");
+					 }
+ 
 					 
 					 
 				 }else {

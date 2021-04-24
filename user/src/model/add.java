@@ -105,12 +105,13 @@ public class add {
 		 		"	<label for=\"exampleFormControlInput1\">Last Name</label>\r\n" + 
 		 		"	<input class=\"form-control\" type=\"text\" placeholder=\"Enter last name\" name=\"lastName\" required><br>\r\n" + 
 		 		"\r\n" + 
+		 		"<input  type=\\\"hidden\\\" name=\\\"type\\\"  value=\\\"customer\\\" >"+
 		 		 
-		 		"<label for=\"exampleFormControlInput1\">Type</label><br>" + 
-		 		"	  <input  type=\"radio\" name=\"type\"  value=\"Admin\" >"
-		 		+ "<label for=\"exampleFormControlInput1\">Admin</label>\r\n" + 
-		 		"	  <input  type=\"radio\" name=\"type\"  value=\"Customer\">"
-		 		+ "<label for=\"exampleFormControlInput1\">Customer</label>\r\n" + 
+//		 		"<label for=\"exampleFormControlInput1\">Type</label><br>" + 
+//		 		"	  <input  type=\"radio\" name=\"type\"  value=\"Admin\" >"
+//		 		+ "<label for=\"exampleFormControlInput1\">Admin</label>\r\n" + 
+//		 		"	  <input  type=\"radio\" name=\"type\"  value=\"Customer\">"
+//		 		+ "<label for=\"exampleFormControlInput1\">Customer</label>\r\n" + 
 		 		
 		 		"	\r\n" + 
 		 		"	<br><br><label for=\"exampleFormControlInput1\">Contact Number</label>\r\n" + 
