@@ -110,19 +110,21 @@ public class log {
 			 		"  \r\n" + 
 			 		"<!-- ================form============================================================================================= -->\r\n"
 			 		+"<center>"
-			 		+ "	\"<div class=\\\"card border-primary mb-3\\\" style=\\\"max-width: 35rem;\\\">\\r\\n\"\r\n" 
-			 		+" \"<h5 style='color:red'>Enter your details....</h5><br>\" "
+			 		+"<div class=\"card border-primary mb-3\" style=\"max-width: 35rem;\">"
+			 		+"<h5 style='color:red'>Enter your login details....</h5><br>"
 			 		+ "<form action='../../../user/logService/log/logUser' method='post'>"
 			 		
 			 		+"<label for=\"exampleFormControlInput1\">Email address</label>\r\n" 
 			 		+"<input class=\"form-control\" type=\"text\" placeholder=\"Enter email\" name=\"email\" required>"
 			 		
 			 		+"<label for=\"exampleFormControlInput1\">Password</label>\r\n" 
-			 		+"<input class=\"form-control\" type=\"text\" placeholder=\"Enter your password\" name=\"password\" required>"
+			 		+"<input class=\"form-control\" type=\"password\" placeholder=\"Enter your password\" name=\"password\" required>\n"
 			 		
-			 		+"<input type='submit' value='' class='btn btn-success' >\" + \r\n" 
+					+"	<input type='submit' value='Login' class='btn btn-success' >" 
 			 		+ "</form>" 
+			 		+"</div>"
 			 		+"</center>"+
+			 		
 			 	
 			 		"<!-- ======================end of the form======================================================================================= -->\r\n" + 
 			 		"<!-- Footer -->\r\n" + 

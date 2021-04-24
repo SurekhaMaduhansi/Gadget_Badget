@@ -57,16 +57,5 @@ public class userService
 	}
 	
 	
-	
-	@POST
-	@Path("/view") 
-	@Produces(MediaType.TEXT_HTML) 
-	public String ViewMyDetails(@FormParam("UserEmail") String UserEmail) 
-	{ 
-		return itemObj.ViewMyDetails(UserEmail); 
-	} 
-	
-	
-	
 }
 	

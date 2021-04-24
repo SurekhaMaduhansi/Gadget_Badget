@@ -105,7 +105,7 @@ public class add {
 		 		"	<label for=\"exampleFormControlInput1\">Last Name</label>\r\n" + 
 		 		"	<input class=\"form-control\" type=\"text\" placeholder=\"Enter last name\" name=\"lastName\" required><br>\r\n" + 
 		 		"\r\n" + 
-		 		"<input  type=\\\"hidden\\\" name=\\\"type\\\"  value=\\\"customer\\\" >"+
+		 		"<input  type='hidden' name='type'  value='customer' >"+
 		 		 
 //		 		"<label for=\"exampleFormControlInput1\">Type</label><br>" + 
 //		 		"	  <input  type=\"radio\" name=\"type\"  value=\"Admin\" >"
