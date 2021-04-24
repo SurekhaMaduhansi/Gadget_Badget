@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+ 
   <display-name>Products</display-name>
 
   <welcome-file-list>
@@ -12,7 +13,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  <servlet>
+<servlet>
  <servlet-name>Jersey Web Application</servlet-name>
  <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
  <load-on-startup>1</load-on-startup>
@@ -95,7 +96,7 @@
 	 <url-pattern>/DeliveredOrdersViewService/*</url-pattern>
 	</servlet-mapping>
 	
-<servlet>
+	<servlet>
 	 <servlet-name>Jersey Web Application9</servlet-name>
 	 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 	 <load-on-startup>1</load-on-startup>
@@ -114,4 +115,17 @@
 	 <servlet-name>Jersey Web Application10</servlet-name>
 	 <url-pattern>/AdminCheckService/*</url-pattern>
 	</servlet-mapping>
+	
+    <servlet>
+	 <servlet-name>Jersey Web Application11</servlet-name>
+	 <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	 <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	 <servlet-name>Jersey Web Application11</servlet-name>
+	 <url-pattern>/MyCartService/*</url-pattern>
+	</servlet-mapping>
+	
+
+	
 </web-app>
