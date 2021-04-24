@@ -1,5 +1,6 @@
 package model;
 
+import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -47,7 +48,7 @@ public class FundingDeskCus {
 		output = "<html>\r\n" + 
 				"<head>\r\n" + 
 				"\r\n" + 
-				"	<link rel=\"stylesheet\" href=\"../Home.css\">\r\n" + 
+				"	<link rel=\"stylesheet\" href=\"../../../GadgetBadget/Home.css\">\r\n" + 
 				"	<!-- bootstrap -->\r\n" + 
 				"	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
 				"		\r\n" + 
@@ -69,24 +70,21 @@ public class FundingDeskCus {
 				"  <nav  class=\"navbar fixed-top navbar-white bg-white\">\r\n" + 
 				"		<div class= \"container\">\r\n" + 
 				"			<a class=\"navbar-brand\" href=\"#\">\r\n" + 
-				"     			 <img src=\"../images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
+				"     			 <img src=\"../../../GadgetBadget/images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
 				"   			</a>\r\n" + 
 				"   			<br>\r\n" + 
 				"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
-				"			  <a href=\"\" >Home</a>\r\n" + 
+				"			  <a href=\"../../../GadgetBadget/HomesService/Homes/UserHome\">Home</a>\r\n" + 
 				"			  <a href=\"#\">Products</a>"
 				+ 				"<a href=\"../../../GadgetBadget/FundingDeskCusService/FundingDeskCus/readMyProjects\">My Projects</a>"+ 
-				"			  <a href=\"#\" class=\"active\">Funding HelpDesk</a>\r\n" + 
+				"			  <a href=\"../../../GadgetBadget/FundingDeskCusService/FundingDeskCus\" class='active'>Funding HelpDesk</a>\r\n" + 
 				"			  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\r\n" + 
 				"			    <i class=\"fa fa-bars\"></i>\r\n" + 
 				"			  </a>\r\n" + 
 				"			\r\n" + 
 				"			</div>\r\n" + 
-				"			\r\n" + 
-				"			<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button>\r\n" + 
-				"      \r\n" + 
 				"			<div class=\"dropdown\">\r\n" + 
-				"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
+				"			   <img src=\"../../../GadgetBadget/images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
 				"			  <div class=\"dropdown-content\">\r\n" + 
 				"			    <a href=\"#\">Profile</a>\r\n" + 
 				"			    <a href=\"\">Log Out</a>\r\n" + 
@@ -105,13 +103,13 @@ public class FundingDeskCus {
 				"  </ol>\r\n" + 
 				"  <div class=\"carousel-inner\">\r\n" + 
 				"    <div class=\"carousel-item active\">\r\n" + 
-				"      <img class=\"d-block w-100\" src=\"../images/cable.jpg\" alt=\"First slide\" height=\"500px\">\r\n" + 
+				"      <img class=\"d-block w-100\" src=\"../../../GadgetBadget/images/cable.jpg\" alt=\"First slide\" height=\"500px\">\r\n" + 
 				"    </div>\r\n" + 
 				"    <div class=\"carousel-item\">\r\n" + 
-				"      <img class=\"d-block w-100\" src=\"../images/hard.jpg\" alt=\"Second slide\" height=\"500px\">\r\n" + 
+				"      <img class=\"d-block w-100\" src=\"../../../GadgetBadget/images/hard.jpg\" alt=\"Second slide\" height=\"500px\">\r\n" + 
 				"    </div>\r\n" + 
 				"    <div class=\"carousel-item\">\r\n" + 
-				"      <img class=\"d-block w-100\" src=\"../images/pen.jpg\" alt=\"Third slide\" height=\"500px\">\r\n" + 
+				"      <img class=\"d-block w-100\" src=\"../../../GadgetBadget/images/pen.jpg\" alt=\"Third slide\" height=\"500px\">\r\n" + 
 				"    </div>\r\n" + 
 				"  </div>\r\n" + 
 				"  <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">\r\n" + 
@@ -128,9 +126,9 @@ public class FundingDeskCus {
 				"  \r\n" + 
 				"  <center><h3> Welcome to GadgetBadget </h3>\r\n" + 
 				"  		<h2>Hope to donate and help young researchers ??</h2>"
-				+ "<br><br>"
-				+ " <button type=\"button\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\r\n" + 
-				"  		Donate->>\r\n" + 
+				+ "<br>"
+				+ " <button type=\"button\" class=\"btn btn-info btn-lg\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\r\n" + 
+				"  		Donate for projects\r\n" + 
 				"	</button></center>\r\n" + 
 				"	\r\n" + 
 				"	<!-- Modal -->\r\n" + 
@@ -199,11 +197,14 @@ public class FundingDeskCus {
 			String ProjectID = Integer.toString(rs.getInt("ProjectID"));
 			String ProjectCode = rs.getString("ProjectCode");
 			String ProjectName = rs.getString("ProjectName");
-			Blob Image = rs.getBlob("Image");
+			Blob Image = rs.getBlob(4);
+			//InputStream binaryStream = Image.getBinaryStream(1, Image.length());
 			String Description = rs.getString("Description");
 			String Budget = rs.getString("Budget");
 			String Category = rs.getString("Category");
 			String UserEmail = rs.getString("UserEmail");
+			
+		
 			
 			
 			// Add into the html table
@@ -391,7 +392,7 @@ public class FundingDeskCus {
 			output = "<html>\r\n" + 
 					"<head>\r\n" + 
 					"\r\n" + 
-					"	<link rel=\"stylesheet\" href=\"../Home.css\">\r\n" + 
+					"	<link rel=\"stylesheet\" href=\"../../../GadgetBadget/Home.css\">\r\n" + 
 					"	<!-- bootstrap -->\r\n" + 
 					"	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
 					"		\r\n" + 
@@ -413,24 +414,21 @@ public class FundingDeskCus {
 					"  <nav  class=\"navbar fixed-top navbar-white bg-white\">\r\n" + 
 					"		<div class= \"container\">\r\n" + 
 					"			<a class=\"navbar-brand\" href=\"#\">\r\n" + 
-					"     			 <img src=\"../images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
+					"     			 <img src=\"../../../GadgetBadget/images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
 					"   			</a>\r\n" + 
 					"   			<br>\r\n" + 
 					"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
-					"			  <a href=\"\" >Home</a>\r\n" + 
+					"			  <a href=\"../../../GadgetBadget/HomesService/Homes/UserHome\" >Home</a>\r\n" + 
 					"			  <a href=\"#\">Products</a>\r\n" + 
-					"			  <a href=\"#\" class=\"active\">Projects</a>\r\n" + 
-					"			  <a href=\"\">Funding HelpDesk</a>\r\n" + 
+					"			  <a href=\"#\" class=\"active\">My Projects</a>\r\n" + 
+					"			  <a href=\"../../../GadgetBadget/FundingDeskCusService/FundingDeskCus\">Funding HelpDesk</a>\r\n" + 
 					"			  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\r\n" + 
 					"			    <i class=\"fa fa-bars\"></i>\r\n" + 
 					"			  </a>\r\n" + 
 					"			\r\n" + 
 					"			</div>\r\n" + 
-					"			\r\n" + 
-					"			<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button>\r\n" + 
-					"      \r\n" + 
 					"			<div class=\"dropdown\">\r\n" + 
-					"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
+					"			   <img src=\"../../../GadgetBadget/images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
 					"			  <div class=\"dropdown-content\">\r\n" + 
 					"			    <a href=\"#\">Profile</a>\r\n" + 
 					"			    <a href=\"\">Log Out</a>\r\n" + 
@@ -449,13 +447,13 @@ public class FundingDeskCus {
 					"  </ol>\r\n" + 
 					"  <div class=\"carousel-inner\">\r\n" + 
 					"    <div class=\"carousel-item active\">\r\n" + 
-					"      <img class=\"d-block w-100\" src=\"../images/cable.jpg\" alt=\"First slide\" height=\"500px\">\r\n" + 
+					"      <img class=\"d-block w-100\" src=\"../../../GadgetBadget/images/cable.jpg\" alt=\"First slide\" height=\"500px\">\r\n" + 
 					"    </div>\r\n" + 
 					"    <div class=\"carousel-item\">\r\n" + 
-					"      <img class=\"d-block w-100\" src=\"../images/hard.jpg\" alt=\"Second slide\" height=\"500px\">\r\n" + 
+					"      <img class=\"d-block w-100\" src=\"../../../GadgetBadget/images/hard.jpg\" alt=\"Second slide\" height=\"500px\">\r\n" + 
 					"    </div>\r\n" + 
 					"    <div class=\"carousel-item\">\r\n" + 
-					"      <img class=\"d-block w-100\" src=\"../images/cable.jpg\\\" alt=\"Third slide\" height=\"500px\">\r\n" + 
+					"      <img class=\"d-block w-100\" src=\"../../../GadgetBadget/images/cable.jpg\" alt=\"Third slide\" height=\"500px\">\r\n" + 
 					"    </div>\r\n" + 
 					"  </div>\r\n" + 
 					"  <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">\r\n" + 
@@ -524,7 +522,7 @@ public class FundingDeskCus {
 							"		    <label>Bank Card Number</label>" + 
 							"			  <input type='hidden' name='UserEmail' value='"+UserEmail+"' >\r\n" + 
 							"				<input type='hidden' name='ProjectID' value='"+ProjectID+"' >\r\n" + 
-							"		      <input type=\"text\" class=\"form-control\"  placeholder=\"Enter card number\" name=\"BankCardNumber\">\r\n" +  
+							"		      <input type=\"number\" class=\"form-control\"  placeholder=\"Enter card number\" name=\"BankCardNumber\" required>\r\n" +  
 							"		  <input type=\"submit\" name=\"submit\" value=\"Send request\"  class=\"btn btn-primary\">\r\n" + 
 							"		</form>\r\n" + "</td>";
 							

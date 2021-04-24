@@ -25,9 +25,18 @@ public class HomesService {
 	@GET
 	@Path("/AdminHome")
 	@Produces(MediaType.TEXT_HTML)
-	public String readDonations()
+	public String AdminHome()
 	 {
 		return homes.DisplayAdminHome();
+	 }
+	
+
+	@GET
+	@Path("/UserHome")
+	@Produces(MediaType.TEXT_HTML)
+	public String UserHome()
+	 {
+		return homes.DisplayUserHome();
 	 }
 	
 
