@@ -168,7 +168,7 @@ public class Donations {
 			String donationID = Integer.toString(rs.getInt("donationID"));
 			String name = rs.getString("name");
 			String email = rs.getString("email");
-			String amount = Double.toString(rs.getDouble("amount"));
+			String amount = rs.getString("amount");
 			String cardNumber = rs.getString("cardNumber");
 			String CVC = rs.getString("CVC");
 			

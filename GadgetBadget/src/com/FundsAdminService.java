@@ -56,5 +56,15 @@ public class FundsAdminService {
 		return output;
 
 	}
+	
+	
+	@GET
+	@Path("/readAcceptedFunds")
+	@Produces(MediaType.TEXT_HTML)
+	public String readAcceptedFunds()
+	 {
+		return fundRequests.readAcceptedFunds();
+	 }
+	
 
 }
