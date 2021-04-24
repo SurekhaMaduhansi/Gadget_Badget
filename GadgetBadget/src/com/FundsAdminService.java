@@ -66,5 +66,26 @@ public class FundsAdminService {
 		return fundRequests.readAcceptedFunds();
 	 }
 	
+	
+	
+	@PUT
+	@Path("/updateFundedAmount")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String updateItem(String acceptedData)
+	{
+		
+	//Convert the input string to a JSON object
+	 JsonObject fundObj = new JsonParser().parse(acceptedData).getAsJsonObject();
+	//Read the values from the JSON object
+	 String FundID = fundObj.get("FundID").getAsString();
+	 String UserEmail= fundObj.get("UserEmail").getAsString();
+	 String ProjectID= fundObj.get("ProjectID").getAsString();
+	 String amount = fundObj.get("amount").getAsString();
+	 
+	 String output = fundRequests.updateFund(FundID,UserEmail,ProjectID,amount);
+			 return output;
+	}
+	
 
 }

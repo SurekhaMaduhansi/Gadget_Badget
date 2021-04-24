@@ -48,7 +48,7 @@ public class FundsAdmin {
 				"<head>\r\n" + 
 				"<meta charset=\"ISO-8859-1\">\r\n" + 
 				"\r\n" + 
-				"	<link rel=\"stylesheet\" href=\"../Home.css\">\r\n" + 
+				"	<link rel=\"stylesheet\" href=\"../../../GadgetBadget/Home.css\">\r\n" + 
 				"	<!-- bootstrap -->\r\n" + 
 				"	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
 				"		\r\n" + 
@@ -73,7 +73,7 @@ public class FundsAdmin {
 				"   			</a>\r\n" + 
 				"   			<br>\r\n" + 
 				"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
-				"			  <a href=\"\" >Home</a>\r\n" + 
+				"			  <a href=\"../../../GadgetBadget/HomesService/Homes/AdminHome\" >Home</a>\r\n" + 
 				"			  <a href=\"#\">Products</a>\r\n" + 
 				"			  <a href=\"../../../GadgetBadget/DonationsService/Donations\">Donations</a>\r\n" + 
 				"			  <a href=\"\" class=\"active\">Funding HelpDesk</a>\r\n" + 
@@ -86,7 +86,7 @@ public class FundsAdmin {
 				"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
 				"			  <div class=\"dropdown-content\">\r\n" + 
 				"			    <a href=\"#\">Profile</a>\r\n" + 
-				"			    <a href=\"Home.jsp\">Log Out</a>\r\n" + 
+				"			    <a href=\"\">Log Out</a>\r\n" + 
 				"			  </div>\r\n" + 
 				"			</div>			\r\n" + 
 				"		</div>	\r\n" + 
@@ -332,6 +332,7 @@ public class FundsAdmin {
 				 
 				 con.close();
 				 output = "Rejected";
+				 
 			 }
 			 catch (Exception e)
 			 {
@@ -413,7 +414,7 @@ public class FundsAdmin {
 				"<head>\r\n" + 
 				"<meta charset=\"ISO-8859-1\">\r\n" + 
 				"\r\n" + 
-				"	<link rel=\"stylesheet\" href=\"Home.css\">\r\n" + 
+				"	<link rel=\"stylesheet\" href=\"../../../GadgetBadget/Home.css\">\r\n" + 
 				"	<!-- bootstrap -->\r\n" + 
 				"	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
 				"		\r\n" + 
@@ -434,14 +435,14 @@ public class FundsAdmin {
 				"  <nav  class=\"navbar fixed-top navbar-white bg-white\">\r\n" + 
 				"		<div class= \"container\">\r\n" + 
 				"			<a class=\"navbar-brand\" href=\"#\">\r\n" + 
-				"     			 <img src=\"../images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
+				"     			 <img src=\"../../../GadgetBadget/images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
 				"   			</a>\r\n" + 
 				"   			<br>\r\n" + 
 				"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
-				"			  <a href=\"\" >Home</a>\r\n" + 
+				"			  <a href=\"../../../GadgetBadget/HomesService/Homes/AdminHome\" >Home</a>\r\n" + 
 				"			  <a href=\"#\">Products</a>\r\n" + 
-				"			  <a href=\"\" class=\"active\">Donations</a>\r\n" + 
-				"			  <a href=\"\">Funding HelpDesk</a>\r\n" + 
+				"			  <a href=\"../../../GadgetBadget/DonationsService/Donations\" >Donations</a>\r\n" + 
+				"			  <a href=\"../../../GadgetBadget/FundsAdminService/FundsAdmin\" class=\"active\">Funding HelpDesk</a>\r\n" + 
 				"			  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\r\n" + 
 				"			    <i class=\"fa fa-bars\"></i>\r\n" + 
 				"			  </a>\r\n" + 
@@ -450,7 +451,7 @@ public class FundsAdmin {
 				"			\r\n" +  
 				"      \r\n" + 
 				"			<div class=\"dropdown\">\r\n" + 
-				"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
+				"			   <img src=\"../../../GadgetBadget/images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
 				"			  <div class=\"dropdown-content\">\r\n" + 
 				"			    <a href=\"#\">Profile</a>\r\n" + 
 				"			    <a href=\"\">Log Out</a>\r\n" + 
@@ -461,7 +462,7 @@ public class FundsAdmin {
 				"	\r\n" + 
 				"<!-- navigation bar -->\r\n" + 
 				"	<br>\r\n" + 
-				"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\">\r\n" + 
+				"  <img class=\"card-img-top\" src=\"../../../GadgetBadget/images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\">\r\n" + 
 				"  <br><br><br>"
 				+ "<br><br>"
 				+ "<center><table class=\"table\" style=\"width:850px\"><thead><tr><th>Fund ID</th>" +
@@ -646,6 +647,39 @@ public class FundsAdmin {
 		return output;
 		
 	} 	
+	
+	
+	public String updateFund(String FundID,String UserEmail,String ProjectID, String amount)
+	{
+		String output = "";
+		 try
+		 {
+			 Connection con = connect();
+			 
+			 if (con == null)
+			 {return "Error while connecting to the database for updating."; }
+			 
+			 // create a prepared statement
+			 String query = "UPDATE accepted SET  UserEmail=? ,ProjectID=?, amount=? WHERE FundID=?";
+			 PreparedStatement preparedStmt = con.prepareStatement(query);
+			 // binding values
+			 preparedStmt.setInt(1,Integer.parseInt(FundID));
+			 preparedStmt.setString(2, UserEmail);
+			 preparedStmt.setInt(3,Integer.parseInt(ProjectID));
+			 preparedStmt.setString(4, amount);
+			
+			 // execute the statement
+			 preparedStmt.execute();
+			 con.close();
+			 output = "Updated successfully";
+		 }
+		 catch (Exception e)
+		 {
+			 output = "Error while updating the item.";
+			 System.err.println(e.getMessage());
+		 }
+		 return output;
+	}
 	
 	
 	

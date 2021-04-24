@@ -43,5 +43,16 @@
  <url-pattern>/FundsAdminService/*</url-pattern>
 </servlet-mapping>
 
+
+<servlet>
+ <servlet-name>Jersey Web Application4</servlet-name>
+ <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+ <servlet-name>Jersey Web Application4</servlet-name>
+ <url-pattern>/HomesService/*</url-pattern>
+</servlet-mapping>
+
   
 </web-app>
