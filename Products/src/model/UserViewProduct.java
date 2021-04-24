@@ -120,9 +120,9 @@ public class UserViewProduct {
 					 		"             \r\n" + 
 					 		"            </div>\r\n" + 
 					 		"          </div>\r\n" + 
-					 		" <div style=\"color: black; text-align: center; font-size: 25px;\">My Orders <i class='fab fa-elementor'></i></div>"+
+					 		" <br><div style=\"color: black; text-align: center; font-size: 22px;\">My Orders <i class='fab fa-elementor'></i></div>"+
 					 		"           <br>"
-					 		+ "<center><table border='1'><tr><th>Email</th>" +
+					 		+ "<center><table border='1' id=\"prx\"><tr><th>Email</th>" +
 						      "<th>Product Id</th>" +
 						      "<th>Quantity</th>" +
 						      "<th>Price</th>" +
@@ -136,7 +136,7 @@ public class UserViewProduct {
 						      "<th>Transaction ID</th>" +
 						      "<th>Status</th>";
 					
-					 String query = " select *from carts inner join products where carts.ID  and carts.email like 'sa@gmail.com' and carts.order_date is not NULL ";
+					 String query = " select *from carts  where ID  and email like 'sa@gmail.com' and order_date is not NULL ";
 					 Statement stmt = con.createStatement();
 					 ResultSet rs = stmt.executeQuery(query);
 					 
@@ -193,7 +193,101 @@ public class UserViewProduct {
 			}
 			 
 			 
-			 
+			 public String readMyCart()
+			 {
+				
+				 String output = "";
+				 int total1=0;
+				 int sno =0;
+				 try
+				 {
+					Connection con = connect();
+					Statement st = con.createStatement();
+					ResultSet rs1= st.executeQuery("Select sum(total) from carts where email = 'sa@gmail.com' and address is null");
+					
+						
+					if (con == null) 
+					{return "Error while connecting to the database for reading."; }
+	
+					// Prepare the html table to be displayed
+					 output = "<html>\r\n" + 
+					 		"<head>\r\n" + 
+					 		"<link rel=\"stylesheet\" href=\"../css/userHome.css\">\r\n" + 
+					 		"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n" + 
+					 		"<script src='https://kit.fontawesome.com/a076d05399.js'></script>\r\n" + 
+					 		"</head>\r\n" + 
+					 		"    <!--Header-->\r\n" + 
+					 		"    <br>\r\n" + 
+					 		"    <div class=\"topnav sticky\">\r\n" + 
+					 		"    \r\n" + 
+					 		"          \r\n" + 
+					 		"           <b> <h2><a href=\"\">sa@gmail.com <i class='fas fa-user-alt'></i></a></h2>\r\n" + 
+					 		"            <a href=\"../../../Products/UserHomeService/AllProducts\">Home<i class=\"fa fa-institution\"></i></a>\r\n" + 
+					 		"            <a href=\"myCart.jsp\">My Cart<i class='fas fa-cart-arrow-down'></i></a>\r\n" + 
+					 		"            <a href=\"../../../Products/UserViewProductService/UserCart\">My Orders  <i class='fab fa-elementor'></i></a>\r\n" + 
+					 		"            <a href=\"../../../Products/UserMessageService/messageUser\">Message Us <i class='fas fa-comment-alt'></i></a>\r\n" + 
+					 		"     \r\n" + 
+					 		"            <div class=\"search-container\">\r\n" + 
+					 		"                <form action=\"searchHome.jsp\" method=\"post\">\r\n" + 
+					 		"					    	<input type = \"text\" placeholder=\"Search Item\" name= \"search\">\r\n" + 
+					 		"					    	<button type = \"Submit\"><i class=\"fa fa-search\"></i>\r\n" + 
+					 		"					    	 Search</button>\r\n" + 
+					 		"					    \r\n" + 
+					 		"					    </form>\r\n" + 
+					 		"               \r\n" + 
+					 		"             \r\n" + 
+					 		"            </div>\r\n" + 
+					 		"          </div>\r\n" + 
+					 		" <div style=\"color: black; text-align: center; font-size: 25px;\">My Orders <i class='fab fa-elementor'></i></div>"+
+					 		"           <br>"
+					 		+ "<center><table border='1'><tr>" +
+						      "<th>Product Id</th>" +
+						      "<th>Quantity</th>" +
+						      "<th>Price</th>" +
+						      "<th>Total</th>" ;
+					
+					 String query = "  select *from products inner join carts on products.ID=carts.ID and carts.email like 'sa@gmail.com' and carts.address is NULL ";
+					 Statement stmt = con.createStatement();
+					 ResultSet rs = stmt.executeQuery(query);
+					 
+					 // iterate through the rows in the result set
+			
+					 while (rs.next())
+					 {
+						 total1 = rs1.getInt(1);
+						 
+						 String ID = Integer.toString(rs.getInt("ID"));
+						 String quantity = Integer.toString(rs.getInt("quantity"));
+						 String price = Integer.toString(rs.getInt("price"));
+						 String total = Integer.toString(rs.getInt("total"));
+				
+						 
+						 // Add into the html table
+						
+						 output += "<td>" + ID + "</td>";
+						 output += "<td>" + quantity + "</td>";
+						 output += "<td>" + price + "</td>";
+						 output += "<td>" + total + "</td></tr>";
+		
+						 
+					
+						 // buttons
+						 output += "";
+						 }
+						 con.close();
+						 
+						 // Complete the html table
+						 	output += "</table>";
+				 }
+				 
+				 catch (Exception e)
+				 {
+					 output = "Error while reading the items.";
+					 System.err.println(e.getMessage());
+				 }
+				 
+				 return output;
+			}
 		
 	
 }
