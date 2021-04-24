@@ -79,6 +79,13 @@ a
   
 }
 
+.myDiv2 {
+  border: 5px outset #03c9a9;
+  background-color: #e4f1fe;    
+  text-align: left;
+  width: 70%;
+  
+}
 #prx {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;

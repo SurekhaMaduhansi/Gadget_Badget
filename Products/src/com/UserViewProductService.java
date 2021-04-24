@@ -31,5 +31,4 @@ public class UserViewProductService {
 				return cartObj.readProducts();
 		    }
 		
-			
 }

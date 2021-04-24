@@ -199,12 +199,17 @@ public class UserViewProduct {
 				 String output = "";
 				 int total1=0;
 				 int sno =0;
-				 try
-				 {
-					Connection con = connect();
-					Statement st = con.createStatement();
-					ResultSet rs1= st.executeQuery("Select sum(total) from carts where email = 'sa@gmail.com' and address is null");
-					
+			
+					 
+					 try
+					 {
+						 Connection con = connect();
+						 Statement st = con.createStatement();
+						 ResultSet rs1= st.executeQuery("Select sum(total) from carts where email = 'sa@gmail.com' and address is null");
+						 
+						 while(rs1.next()){
+								total1= rs1.getInt(1);
+							}
 						
 					if (con == null) 
 					{return "Error while connecting to the database for reading."; }
@@ -215,10 +220,58 @@ public class UserViewProduct {
 					 		"<link rel=\"stylesheet\" href=\"../css/userHome.css\">\r\n" + 
 					 		"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n" + 
 					 		"<script src='https://kit.fontawesome.com/a076d05399.js'></script>\r\n" + 
+					 		"					<link rel=\"stylesheet\" href=\"Home.css\">\r\n" + 
+					 		"					<!-- bootstrap --> \r\n" + 
+					 		"					 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> \r\n" + 
+					 		"					\r\n" + 
+					 		"					 <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\"  \r\n" + 
+					 		"					 integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\"> \r\n" + 
+					 		"					\r\n" + 
+					 		"					 <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\"\r\n" + 
+					 		"					 <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n" + 
+					 		"					 <script src='https://kit.fontawesome.com/a076d05399.js'></script> \r\n" + 
+					 		"					 </head>\r\n" + 
+					 		"					 <title>GadgetBadget</title> \r\n" + 
+					 		"					 		</head> \r\n" + 
+					 		"					 		\r\n" + 
+					 		"					 		<body> \r\n" + 
+					 		"					 		 \r\n" + 
+					 		"					 		  <nav  class=\"navbar fixed-top navbar-white bg-white\"> \r\n" + 
+					 		"					 				<div class= \"container\">\r\n" + 
+					 		"					 					<a class=\"navbar-brand\" href=\"#\"> \r\n" + 
+					 		"					 		   			 <img src=\"../images/Capture.png\" alt=\"logo\" width=\"220\" height=\"95\" float=\"left\">\r\n" + 
+					 		"					 		 			</a> \r\n" + 
+					 		"					 		   			<br>\r\n" + 
+					 		"					 		   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
+					 		"					 					  <a href=\"#\" class=\"active\">Home</a>  \r\n" + 
+					 		"					 					  <a href=\"#\">Products</a>  \r\n" + 
+					 		"					 					  <a href=\"#\">Projects</a> \r\n" + 
+					 		"					 					  <a href=\"#\">Funding HelpDesk</a>\r\n" + 
+					 		"					 					  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\"> \r\n" + 
+					 		"					 					    <i class=\"fa fa-bars\"></i> \r\n" + 
+					 		"					 					  </a> \r\n" + 
+					 		"					 					</div>\r\n" + 
+					 		"					 					<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button> \r\n" + 
+					 		"					 		\r\n" + 
+					 		"					 					<div class=\"dropdown\">\r\n" + 
+					 		"					 				   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"78\" >\r\n" + 
+					 		"					 				  <div class=\"dropdown-content\"> \r\n" + 
+					 		"					 					    <a href=\"#\">Sign Up</a> \r\n" + 
+					 		"					 					    <a href=\"#\">Log In</a> \r\n" + 
+					 		"					 					  </div> \r\n" + 
+					 		"					 					</div>  \r\n" + 
+					 		"					 					\r\n" + 
+					 		"					 				</div>  \r\n" + 
+					 		"					 			  \r\n" + 
+					 		"					 			</nav> \r\n" + 
+					 		"					 			 \r\n" + 
+					 		"					 			<br> \r\n" + 
+					 		"					 		  <br><br> \r\n" + 
+					 		"					 		"+
 					 		"</head>\r\n" + 
 					 		"    <!--Header-->\r\n" + 
 					 		"    <br>\r\n" + 
-					 		"    <div class=\"topnav sticky\">\r\n" + 
+					 		"   <br> <div class=\"topnav sticky\">\r\n" + 
 					 		"    \r\n" + 
 					 		"          \r\n" + 
 					 		"           <b> <h2><a href=\"\">sa@gmail.com <i class='fas fa-user-alt'></i></a></h2>\r\n" + 
@@ -244,9 +297,10 @@ public class UserViewProduct {
 						      "<th>Product Id</th>" +
 						      "<th>Quantity</th>" +
 						      "<th>Price</th>" +
-						      "<th>Total</th>" ;
+						      "<th>Total</th>"+
+						      "<th>Remove The Product</th></tr>";
 					
-					 String query = "  select *from products inner join carts on products.ID=carts.ID and carts.email like 'sa@gmail.com' and carts.address is NULL ";
+					 String query = "  select *from carts where ID and email like 'sa@gmail.com' and carts.address is NULL ";
 					 Statement stmt = con.createStatement();
 					 ResultSet rs = stmt.executeQuery(query);
 					 
@@ -254,8 +308,8 @@ public class UserViewProduct {
 			
 					 while (rs.next())
 					 {
-						 total1 = rs1.getInt(1);
-						 
+						
+						 String CID = Integer.toString(rs.getInt("CID"));
 						 String ID = Integer.toString(rs.getInt("ID"));
 						 String quantity = Integer.toString(rs.getInt("quantity"));
 						 String price = Integer.toString(rs.getInt("price"));
@@ -266,18 +320,31 @@ public class UserViewProduct {
 						
 						 output += "<td>" + ID + "</td>";
 						 output += "<td>" + quantity + "</td>";
-						 output += "<td>" + price + "</td>";
-						 output += "<td>" + total + "</td></tr>";
+						 output += "<td>" +"Rs. "+ price + "</td>";
+						 output += "<td>" +"Rs. "+ total + "</td>";
+						 
 		
 						 
 					
 						 // buttons
-						 output += "";
+						 output += "<td><form method='post' action='../../../Products/MyCartService/viewMyCart/DeleteProductCart'>"
+								 + "<button type='submit' class='button'><b>Remove <i class='fas fa-cart-arrow-down'></i></b></button>"
+								 + "<input name='email' type='hidden' value='sa@gmail.com'>" 
+								 + "<input name='ID' type='hidden' value='"+CID+"'>" 
+								 + "</form></td></tr>"
+								 ;
 						 }
 						 con.close();
 						 
 						 // Complete the html table
-						 	output += "</table>";
+						 	output += "</table>"+
+						 			"<br><div class=\"myDiv\">Total Bill -:  Rs. " + total1 +"/=</div>"+
+						 			"<div class=\"myDiv\"><div class=\"alert alert-success\" role=\"alert\">\r\n" + 
+						 			"  <h4 class=\"alert-heading\">Proceed to Order!</h4>\r\n" + 
+						 			"  <p>You can proceed the order by pressing button bellow.</p>\r\n" + 
+						 			"  <hr>\r\n" + 
+						 			"  <p class=\"mb-0\"><button type='submit'> Order -></p>\r\n" + 
+						 			"</div></div>";
 				 }
 				 
 				 catch (Exception e)
@@ -289,5 +356,35 @@ public class UserViewProduct {
 				 return output;
 			}
 		
-	
+			 public String UserDeleteProduct(String CID)
+				{
+						 String output = "";
+						
+						 try
+						 {
+							 Connection con = connect();
+							
+							 if (con == null)
+							 {return "Error while connecting to the database for deleting."; }
+									
+							 // create a prepared statement
+							 String query = "delete from carts where CID=?";
+							 PreparedStatement preparedStmt = con.prepareStatement(query);
+								
+							 // binding values
+							 preparedStmt.setInt(1, Integer.parseInt(CID));
+							
+							 // execute the statement
+							 preparedStmt.execute();
+							 con.close();
+							 output = "Deleted successfully";
+						 }
+								
+						 catch (Exception e)
+						 {
+							 output = "Error while deleting the item.";
+							 System.err.println(e.getMessage());
+						 }
+						 return output;
+				}
 }
