@@ -28,7 +28,7 @@ Myprofile myprofile = new Myprofile();
 
 	public String readCustomerProfile() 
 	 {
-			
+		
 				return myprofile.readCustomerProfile();
 			} 
 	}

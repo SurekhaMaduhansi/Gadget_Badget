@@ -1,10 +1,13 @@
 package model;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+
 
 public class Myprofile {
 	
@@ -290,70 +293,69 @@ public class Myprofile {
 			 
 		 } 
 		 // Prepare the html table to be displayed
-		 output = "<html>\r\n" + 
-		 		"<head>\r\n" + 
-		 		"<meta charset=\"ISO-8859-1\">\r\n" + 
-		 		"\r\n" + 
-		 		"	<link rel=\"stylesheet\" href=\"Home.css\">\r\n" + 
-		 		"	<!-- bootstrap -->\r\n" + 
-		 		"	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
-		 		"		\r\n" + 
-		 		"	<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" \r\n" + 
-		 		"			integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n" + 
-		 		"	\r\n" + 
-		 		"	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">	\r\n" + 
-		 		"		\r\n" + 
-		 		"		\r\n" + 
-		 		"	<!-- bootstrap -->\r\n" + 
-		 		"<title>GadgetBadget</title>\r\n" + 
-		 		"</head>\r\n" + 
-		 		"\r\n" + 
-		 		"<body>\r\n" + 
-		 		"\r\n" + 
-		 		"<!-- navigation bar -->\r\n" + 
-		 		"\r\n" + 
-		 		"  <nav  class=\"navbar fixed-top navbar-white bg-white\">\r\n" + 
-		 		"		<div class= \"container\">\r\n" + 
-		 		"			<a class=\"navbar-brand\" href=\"#\">\r\n" + 
-		 		"     			 <img src=\"../images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
-		 		"   			</a>\r\n" + 
-		 		"   			<br>\r\n" + 
-		 		"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
-		 		"			  <a href=\"#\" class=\"active\">Home</a>\r\n" + 
-		 		"			  <a href=\"#\">Products</a>\r\n" + 
-		 		"			  \r\n" + 
-		 		"			  <a href=\"AdminDonations.jsp\">Donations</a>\r\n" + 
-		 		"			  <!--  <a href=\"#\">Projects</a>-->\r\n" + 
-		 		"			  <a href=\"AdminFundingDesk.jsp\">Funding HelpDesk</a>\r\n" + 
-		 		"			  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\r\n" + 
-		 		"			    <i class=\"fa fa-bars\"></i>\r\n" + 
-		 		"			  </a>\r\n" + 
-		 		"			\r\n" + 
-		 		"			</div>\r\n" + 
-		 		"			\r\n" + 
-		 		"			<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button>\r\n" + 
-		 		"      \r\n" + 
-		 		"			<div class=\"dropdown\">\r\n" + 
-		 		"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
-		 		"			  <div class=\"dropdown-content\">\r\n" + 
-		 		
-		 						"<form action='../../../user/userService/user/view\' method='post'><input type='submit' value ='View Profile'>"
-		 		+ 				"</form>	" + 
-		 		"			    <a href=\"Home.jsp\">Log Out</a>\r\n" + 
-		 		"			  </div>\r\n" + 
-		 		"			</div>			\r\n" + 
-		 		"		</div>	\r\n" + 
-		 		"	</nav>\r\n" + 
-		 		"	\r\n" + 
-		 		"<!-- navigation bar -->\r\n" + 
-		 		"	<br>\r\n" + 
-		 		"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\">\r\n" + 
-		 		"  <br><br><br>"
-		 		+ "<center><table border='1'><tr><th>email</th><th>First Name</th>" +
-		 "<th>Last Name</th>" + 
-		 "<th>Type</th>"+ "<th>Phone</th>" +"<th>Password</th>"+
-		 "<th>Remove</th></tr>"; 
-		 
+		 output =  "<html>\r\n" + 
+			 		"<head>\r\n" + 
+			 		"<meta charset=\"ISO-8859-1\">\r\n" + 
+			 		"\r\n" + 
+			 		"	<link rel=\"stylesheet\" href=\"Home.css\">\r\n" + 
+			 		"	<!-- bootstrap -->\r\n" + 
+			 		"	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
+			 		"		\r\n" + 
+			 		"	<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" \r\n" + 
+			 		"			integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n" + 
+			 		"	\r\n" + 
+			 		"	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">	\r\n" + 
+			 		"		\r\n" + 
+			 		"		\r\n" + 
+			 		"	<!-- bootstrap -->\r\n" + 
+			 		"<title>GadgetBadget</title>\r\n" + 
+			 		"</head>\r\n" + 
+			 		"\r\n" + 
+			 		"<body>\r\n" + 
+			 		"\r\n" + 
+			 		"<!-- navigation bar -->\r\n" + 
+			 		"\r\n" + 
+			 		"  <nav  class=\"navbar fixed-top navbar-white bg-white\">\r\n" + 
+			 		"		<div class= \"container\">\r\n" + 
+			 		"			<a class=\"navbar-brand\" href=\"#\">\r\n" + 
+			 		"     			 <img src=\"../images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
+			 		"   			</a>\r\n" + 
+			 		"   			<br>\r\n" + 
+			 		"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
+			 		"			  <a href=\"#\" class=\"active\">Home</a>\r\n" + 
+			 		"			  <a href=\"#\">Products</a>\r\n" + 
+			 		"			  \r\n" + 
+			 		"			  <a href=\"AdminDonations.jsp\">Donations</a>\r\n" + 
+			 		"			  <!--  <a href=\"#\">Projects</a>-->\r\n" + 
+			 		"			  <a href=\"AdminFundingDesk.jsp\">Funding HelpDesk</a>\r\n" + 
+			 		"			  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\r\n" + 
+			 		"			    <i class=\"fa fa-bars\"></i>\r\n" + 
+			 		"			  </a>\r\n" + 
+			 		"			\r\n" + 
+			 		"			</div>\r\n" + 
+			 		"			\r\n" + 
+			 		"			<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button>\r\n" + 
+			 		"      \r\n" + 
+			 		"			<div class=\"dropdown\">\r\n" + 
+			 		"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
+			 		"			  <div class=\"dropdown-content\">\r\n" + 
+			 		
+			 						"<form action='../../../user/userService/user/view\' method='post'><input type='submit' value ='View Profile'>"
+			 		+ 				"</form>	" + 
+			 		"			    <a href=\"Home.jsp\">Log Out</a>\r\n" + 
+			 		"			  </div>\r\n" + 
+			 		"			</div>			\r\n" + 
+			 		"		</div>	\r\n" + 
+			 		"	</nav>\r\n" + 
+			 		"	\r\n" + 
+			 		"<!-- navigation bar -->\r\n" + 
+			 		"	<br>\r\n" + 
+			 		"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\">\r\n" + 
+			 		"  <br><br><br>"
+			 		+ "<center><table border='1'><tr><th>email</th><th>First Name</th>" +
+			 "<th>Last Name</th>" + 
+			 "<th>Type</th>"+ "<th>Phone</th>" +"<th>Password</th>"+
+			 "<th>Remove</th><th>Update</th></tr>"; 
 		 String query = "select * from users where UserEmail like 'customer@gmail.com'"; 
 		 Statement stmt = con.createStatement(); 
 		 ResultSet rs = stmt.executeQuery(query); 
@@ -376,9 +378,10 @@ public class Myprofile {
 		 output += "<td>" + password + "</td>";
 		 // buttons
 		 output +=  "<td><form method='post' action=''>"
-		 + "<input name='btnUpdate' type='submit' value='Update' class='btn btn-info'>"
+		 +"<input name='btndelete' type='submit' value='detele' class='btn btn-info'></td>"
+		 + "<td><input name='btnUpdate' type='submit' value='Update' class='btn btn-info'></td>"
 		 + "<input name='UserEmail' type='hidden' value='" + UserEmail 
-		 + "'>" + "</form></td></tr>"; 
+		 + "'>" + "</form></tr>"; 
 		 } 
 		 con.close(); 
 		 con.close(); 
