@@ -184,13 +184,16 @@ public class Project {
 			 output += "<td>" + Description+ "</td>";
 			 output += "<td>" + Budget+ "</td>";
 			 // buttons
-			 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
+			 output += "<td><form method = 'post' action='../../../GB/ProjectService/project_list/update'>"
+					 +"<input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'>"
+					  +"<input name='ProjectId' type='hidden' value='" + ProjectId+"'>"
+					 +"</form>"
 			 + "<td><form method='post' action='../../../GB/ProjectService/project_list/Delete'>"
 			 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
 			 + "<input name='ProjectId' type='hidden' value='" + ProjectId+"'>"
 			 + "</form>"
 			 + "<td><form method='post' action='project.jsp'>"
-			 + "<input name='btnRequest' type='button' value = 'Request' class='btn btn-secondary'>"
+			 + "<input name='btnRequest' type='button' value = 'Request' class='btn btn-danger'>"
 			 + "<input name='ProjectId' type='hidden' value='" + ProjectId
 			 + "'>" + "</form></td></tr>";
 			 } 
@@ -208,7 +211,7 @@ public class Project {
 		return output;
 	}
 	
-	public String updateProject(String ID,String pcode, String pname, String category, String description, String budget) {
+	public String updateProject(String ProjectId,String ProjectCode, String ProjectName, String Description, String Budget, String Category,String UserEmail) {
 		
 		String output ="";
 		
@@ -220,15 +223,15 @@ public class Project {
 			 if (con == null)
 			 {return "Error while connecting to the database for updating."; }
 			 // create a prepared statement
-			 String query = "UPDATE projects SET p_id=?,proj_name=?,proj_category=?,proj_des=?,proj_budget=? WHERE id=?";
+			 String query = "UPDATE projects SET ProjectCode=?,ProjectName=?,Description=?,Budget=?,Category=? WHERE ProjectId=?";
 			 PreparedStatement preparedStmt = con.prepareStatement(query);
 			 // binding values
-			 preparedStmt.setString(1, pcode);
-			 preparedStmt.setString(2, pname);
-			 preparedStmt.setString(3, category);
-			 preparedStmt.setString(4, description);
-			 preparedStmt.setDouble(5, Double.parseDouble(budget));
-			 preparedStmt.setInt(6, Integer.parseInt(ID));
+			 preparedStmt.setString(1, ProjectCode);
+			 preparedStmt.setString(2, ProjectName);
+			 preparedStmt.setString(3, Description);
+			 preparedStmt.setString(4, Budget);
+			 preparedStmt.setString(5, Category);
+			 preparedStmt.setInt(6, Integer.parseInt(ProjectId));
 			 // execute the statement
 			 preparedStmt.execute();
 			 con.close();

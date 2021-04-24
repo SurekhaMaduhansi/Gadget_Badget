@@ -52,13 +52,14 @@ public class ProjectService {
 		 JsonObject PObject = new JsonParser().parse(project_data_list).getAsJsonObject();
 		 
 		//Read the values from the JSON object
-		 String id = PObject.get("id").getAsString();
-		 String pCodeString = PObject.get("p_id").getAsString();
-		 String pNameString = PObject.get("proj_name").getAsString();
-		 String pCatString = PObject.get("proj_category").getAsString();
-		 String desString = PObject.get("proj_des").getAsString();
-		 String budget = PObject.get("proj_budget").getAsString();
-		 String output = project.updateProject(id, pCodeString, pNameString, pCatString, desString,budget);
+		 String ProjectId = PObject.get("ProjectId").getAsString();
+		 String ProjectCode = PObject.get("ProjectCode").getAsString();
+		 String ProjectName = PObject.get("ProjectName").getAsString();
+		 String Description = PObject.get("Description").getAsString();
+		 String Budget = PObject.get("Budget").getAsString();
+		 String Category = PObject.get("Category").getAsString();
+		 String UserEmail = PObject.get("UserEmail").getAsString();
+		 String output = project.updateProject(ProjectId, ProjectCode, ProjectName, Description, Budget,Category,UserEmail);
 		 
 		return output;
 	}
