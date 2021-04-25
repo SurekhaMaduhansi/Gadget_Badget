@@ -86,6 +86,63 @@ a
   width: 70%;
   
 }
+
+
+.button11 {
+  background-color: #cf000f; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #cf000f;
+}
+
+.button1:hover {
+  background-color: #cf000f;
+  color: white;
+}
+
+
+
+
+#prxxx {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+
+  border-collapse: collapse;
+  box-shadow: 0 30px 50px 0 black;
+}
+
+#prxxx td, #prxxx th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#prxxx tr:nth-child(even){background-color: #f2f2f2;}
+
+#prxxx tr:hover {background-color: #abb7b7;}
+
+#prxxx th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1ba39c;
+  color: black;
+}
+
+
 #prx {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -328,6 +385,27 @@ body {
   color: white;
 }
 
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("new3.jpg");
+
+  min-height: 700px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
 
 .modal1 {
@@ -432,6 +510,13 @@ body {
   text-align: left;
   background-color: #89c4f4;
 }
+
+
+
+
+
+
+
 /*footer*/
 .footer {
    position: fixed;

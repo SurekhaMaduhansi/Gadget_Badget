@@ -97,15 +97,64 @@ public class UserViewProduct {
 					 		"<link rel=\"stylesheet\" href=\"../css/userHome.css\">\r\n" + 
 					 		"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n" + 
 					 		"<script src='https://kit.fontawesome.com/a076d05399.js'></script>\r\n" + 
+					 		"					<link rel=\"stylesheet\" href=\"Home.css\">\r\n" + 
+					 		"					<!-- bootstrap --> \r\n" + 
+					 		"					 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> \r\n" + 
+					 		"					\r\n" + 
+					 		"					 <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\"  \r\n" + 
+					 		"					 integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\"> \r\n" + 
+					 		"					\r\n" + 
+					 		"					 <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\"\r\n" + 
+					 		"					 <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n" + 
+					 		"					 <script src='https://kit.fontawesome.com/a076d05399.js'></script> \r\n" + 
+					 		"					 </head>\r\n" + 
+					 		"					 <title>GadgetBadget</title> \r\n" + 
+					 		"					 		</head> \r\n" + 
+					 		"					 		\r\n" + 
+					 		"					 		<body> \r\n" + 
+					 		"					 		 \r\n" + 
+					 		"					 		  <nav  class=\"navbar fixed-top navbar-white bg-white\"> \r\n" + 
+					 		"					 				<div class= \"container\">\r\n" + 
+					 		"					 					<a class=\"navbar-brand\" href=\"#\"> \r\n" + 
+					 		"					 		   			 <img src=\"../images/Capture.png\" alt=\"logo\" width=\"220\" height=\"95\" float=\"left\">\r\n" + 
+					 		"					 		 			</a> \r\n" + 
+					 		"					 		   			<br>\r\n" + 
+					 		"					 		   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
+					 		"					 					  <a href=\"#\" class=\"active\">Home</a>  \r\n" + 
+					 		"					 					  <a href=\"#\">Products</a>  \r\n" + 
+					 		"					 					  <a href=\"#\">Projects</a> \r\n" + 
+					 		"					 					  <a href=\"#\">Funding HelpDesk</a>\r\n" + 
+					 		"					 					  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\"> \r\n" + 
+					 		"					 					    <i class=\"fa fa-bars\"></i> \r\n" + 
+					 		"					 					  </a> \r\n" + 
+					 		"					 					</div>\r\n" + 
+					 		"					 					<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button> \r\n" + 
+					 		"					 		\r\n" + 
+					 		"					 					<div class=\"dropdown\">\r\n" + 
+					 		"					 				   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"78\" >\r\n" + 
+					 		"					 				  <div class=\"dropdown-content\"> \r\n" + 
+					 		"					 					    <a href=\"#\">Sign Up</a> \r\n" + 
+					 		"					 					    <a href=\"#\">Log In</a> \r\n" + 
+					 		"					 					  </div> \r\n" + 
+					 		"					 					</div>  \r\n" + 
+					 		"					 					\r\n" + 
+					 		"					 				</div>  \r\n" + 
+					 		"					 			  \r\n" + 
+					 		"					 			</nav> \r\n" + 
+					 		"					 			 \r\n" + 
+					 		"					 			<br> \r\n" + 
+					 		"					 		  <br><br> \r\n" + 
+					 		"					 		"+
+					 		
 					 		"</head>\r\n" + 
 					 		"    <!--Header-->\r\n" + 
-					 		"    <br>\r\n" + 
+					 		"    <br><br>\r\n" + 
 					 		"    <div class=\"topnav sticky\">\r\n" + 
 					 		"    \r\n" + 
 					 		"          \r\n" + 
 					 		"           <b> <h2><a href=\"\">sa@gmail.com <i class='fas fa-user-alt'></i></a></h2>\r\n" + 
 					 		"            <a href=\"../../../Products/UserHomeService/AllProducts\">Home<i class=\"fa fa-institution\"></i></a>\r\n" + 
-					 		"            <a href=\"myCart.jsp\">My Cart<i class='fas fa-cart-arrow-down'></i></a>\r\n" + 
+					 		"            <a href=\"../../../Products/MyCartService/viewMyCart\">My Cart<i class='fas fa-cart-arrow-down'></i></a>\r\n" + 
 					 		"            <a href=\"../../../Products/UserViewProductService/UserCart\">My Orders  <i class='fab fa-elementor'></i></a>\r\n" + 
 					 		"            <a href=\"../../../Products/UserMessageService/messageUser\">Message Us <i class='fas fa-comment-alt'></i></a>\r\n" + 
 					 		"     \r\n" + 
@@ -276,7 +325,7 @@ public class UserViewProduct {
 					 		"          \r\n" + 
 					 		"           <b> <h2><a href=\"\">sa@gmail.com <i class='fas fa-user-alt'></i></a></h2>\r\n" + 
 					 		"            <a href=\"../../../Products/UserHomeService/AllProducts\">Home<i class=\"fa fa-institution\"></i></a>\r\n" + 
-					 		"            <a href=\"myCart.jsp\">My Cart<i class='fas fa-cart-arrow-down'></i></a>\r\n" + 
+					 		"            <a href=\"../../../Products/MyCartService/viewMyCart\">My Cart<i class='fas fa-cart-arrow-down'></i></a>\r\n" + 
 					 		"            <a href=\"../../../Products/UserViewProductService/UserCart\">My Orders  <i class='fab fa-elementor'></i></a>\r\n" + 
 					 		"            <a href=\"../../../Products/UserMessageService/messageUser\">Message Us <i class='fas fa-comment-alt'></i></a>\r\n" + 
 					 		"     \r\n" + 
@@ -292,8 +341,16 @@ public class UserViewProduct {
 					 		"            </div>\r\n" + 
 					 		"          </div>\r\n" + 
 					 		" <div style=\"color: black; text-align: center; font-size: 25px;\">My Orders <i class='fab fa-elementor'></i></div>"+
-					 		"           <br>"
-					 		+ "<center><table border='1'><tr>" +
+					 		"           <br>"+
+
+					 		"<center><div \"card text-white bg-warning mb-3\" style=\"max-width: 18rem;\">\r\n" + 
+					 		"  <div class=\"card-header\"><center>Total Amount Of The Cart</div>\r\n" + 
+					 		"  <div class=\"card-body\">\r\n" + 
+					 		"    <h5 class=\"card-title\"><b><center>Rs. " + total1 +"/=</h5>\r\n" + 
+					 		
+					 		"  </div>\r\n" + 
+					 		"</div>"+
+					 		"<center><table border='1' id=\"prxxx\"><tr>" +
 						      "<th>Product Id</th>" +
 						      "<th>Quantity</th>" +
 						      "<th>Price</th>" +
@@ -328,7 +385,7 @@ public class UserViewProduct {
 					
 						 // buttons
 						 output += "<td><form method='post' action='../../../Products/MyCartService/viewMyCart/DeleteProductCart'>"
-								 + "<button type='submit' class='button'><b>Remove <i class='fas fa-cart-arrow-down'></i></b></button>"
+								 + "<button type='submit' class='button11 button1'><b>Remove <i class='fas fa-cart-arrow-down'></i></b></button>"
 								 + "<input name='email' type='hidden' value='sa@gmail.com'>" 
 								 + "<input name='ID' type='hidden' value='"+CID+"'>" 
 								 + "</form></td></tr>"
@@ -337,14 +394,16 @@ public class UserViewProduct {
 						 con.close();
 						 
 						 // Complete the html table
-						 	output += "</table>"+
-						 			"<br><div class=\"myDiv\">Total Bill -:  Rs. " + total1 +"/=</div>"+
-						 			"<div class=\"myDiv\"><div class=\"alert alert-success\" role=\"alert\">\r\n" + 
+						 	output += "</table><br>"+
+						 			
+						 			"<div class=\"alert alert-success\" role=\"alert\">\r\n" + 
 						 			"  <h4 class=\"alert-heading\">Proceed to Order!</h4>\r\n" + 
 						 			"  <p>You can proceed the order by pressing button bellow.</p>\r\n" + 
 						 			"  <hr>\r\n" + 
-						 			"  <p class=\"mb-0\"><button type='submit'> Order -></p>\r\n" + 
-						 			"</div></div>";
+						 			"  <p class=\"mb-0\">"
+						 			+ "<form method='post' action='../../../Products/BillService/bill' >"
+						 			+ "<button type='submit' class='button'><b> Order -></p>\r\n" + 
+						 			"</div></div></form>";
 				 }
 				 
 				 catch (Exception e)
@@ -386,5 +445,128 @@ public class UserViewProduct {
 							 System.err.println(e.getMessage());
 						 }
 						 return output;
+				}
+			 
+			 public String insertBill(String address, String city, String mobile_number, String transaction_id,String status, String email)
+			 {
+				 String output = "";
+					 try
+					 {
+					 Connection con = connect();
+						 if (con == null)
+						 {
+							 return "Error while connecting to the database for inserting."; 
+						 }
+						 
+			
+					 
+						 // create a prepared statement
+						 String query = " update carts set address =?, city =? , mobile_number =?, order_date = now(),delivary_date= DATE_ADD(order_date, INTERVAL 7 DAY),payment_method=?,transaction_id = ?,status=? where email='sa@gmail.com' and address is NULL";
+						 
+								 PreparedStatement preparedStmt = con.prepareStatement(query);
+								
+								 // binding values
+								 preparedStmt.setString(1, address);
+								 preparedStmt.setString(2, city);
+								 preparedStmt.setInt(3, Integer.parseInt(mobile_number));
+								 preparedStmt.setString(4, transaction_id);
+								 preparedStmt.setString(5, status);
+								 preparedStmt.setString(6, email);
+								
+								 // execute the statement
+								 preparedStmt.execute();
+								 con.close();
+								 output = "Updated successfully";
+						 }
+					 
+					 
+						  catch (Exception e)
+						 {
+								 output = "Error while inserting the item.";
+								 System.err.println(e.getMessage());
+						 }
+								
+					     return output;
+					 }
+
+			 public String readBill()
+			 {
+				
+				 String output = "";
+				
+				 try
+				 {
+					Connection con = connect();
+					
+					if (con == null) 
+					{return "Error while connecting to the database for reading."; }
+					
+					output ="<html>\r\n" + 
+							"<head>\r\n" + 
+							
+							"<link rel=\"stylesheet\" href=\"../css/user.css\">"+ 
+							"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n" + 
+					
+ 							"<script src='https://kit.fontawesome.com/a076d05399.js'></script>\r\n" + 
+							"    <div class=\"topnav sticky\">\r\n" + 
+							
+							"    \r\n" + 
+							"          \r\n" + 
+							"           <b> <h2><a href=\"\">sa@gmail.com <i class='fas fa-user-alt'></i></a></h2>\r\n" + 
+							
+							"            <a href=\"../../../Products/UserHomeService/AllProducts\">Home<i class=\"fa fa-institution\"></i></a>\r\n" + 
+							"            <a href=\"../../../Products/MyCartService/viewMyCart\">My Cart<i class='fas fa-cart-arrow-down'></i></a>\r\n" + 
+							"            <a href=\"../../../Products/UserViewProductService/UserCart\">My Orders  <i class='fab fa-elementor'></i></a>\r\n" + 
+							"            <a href=\"../../../Products/UserMessageService/messageUser\">Message Us <i class='fas fa-comment-alt'></i></a>\r\n" + 
+							"     \r\n" + 
+						
+							"            <div class=\"search-container\">\r\n" + 
+							"                <form action=\"searchHome.jsp\" method=\"post\">\r\n" + 
+							"					    	<input type = \"text\" placeholder=\"Search Item\" name= \"search\">\r\n" + 
+							"					    	<button type = \"Submit\"><i class=\"fa fa-search\"></i>\r\n" + 
+							"					    	 Search</button>\r\n" + 
+							"					    \r\n" + 
+							"					    </form>\r\n" + 
+							"               \r\n" + 
+							"             \r\n" + 
+							"            </div>\r\n" + 
+							"          </div>\r\n" + 
+							"        \r\n" + 
+							
+							"           <!--table-->\r\n" + 
+							
+							"<center>	"+
+							"\r\n" + 
+							"		<center><div class=\"bg-img\" >\r\n" + 
+							"		\r\n" + 
+							"	<form action = \"addressPaymentForOrderAction.jsp\" method=\"post\" class=\"container\">\r\n" + 
+							"\r\n" + 
+							"			\r\n" + 
+							"					<b>\r\n" + 
+							"		             Enter Address<input type =\"text\" name =\"address\"  placeholder=\"Enter the address..\" required><br><br>\r\n" + 
+							"					 Enter city<input type =\"text\" name =\"city\" placeholder=\"Enter the city...\" required><br><br>\r\n" + 
+							"					 Mobile Number<input type =\"text\" name =\"mobile_number\"  placeholder=\"Enter the mobile number..\" required><br><br>\r\n" + 
+							"					 Select way of Payment<br><select name = \"payment_method\"><br><br>\r\n" + 
+							"					    <option value=\"\"></option>\r\n" + 
+							"					    <option value=\"Cash On Delivery(COD)\">Cash On Delivery(COD)</option>\r\n" + 
+							"					 	<option value=\"Online Payment\">Online Payment</option>\r\n" + 
+							"					 </select><br><br>\r\n" + 
+							"					 Transaction ID<input type =\"text\" name =\"transaction_id\"  placeholder =\"Enter the transaction id..\" ><br>\r\n" + 
+							"					 <p style=\"color:#cf000f; font-size: 14px;\">*If you selected online payment option, then fill this field!!, Otherwise keep this empty!!</p>\r\n" + 
+							"          <button type=\"submit\" class=\"button button5\">Proceed to Generate Bill & Save</button>\r\n" + 
+							"								    \r\n" + 
+							"		</form>\r\n" + 
+							"		</div></center>"
+							;
+				
+				}
+				
+				catch (Exception e)
+				{
+					 output = "Error while reading the items.";
+					 System.err.println(e.getMessage());
+				}
+				
+				return output;
 				}
 }

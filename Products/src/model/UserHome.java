@@ -174,10 +174,10 @@ public class UserHome {
 					 		"    <br><br><br>\r\n" + 
 					 		"    <div class=\"topnav sticky\">\r\n" + 
 					 		"    \r\n" + 
-					 		"          \r\n" + 
+					 		"          \r\n" +
 					 		"           <b> <h2><a href=\"\">sa@gmail.com <i class='fas fa-user-alt'></i></a></h2>\r\n" + 
 					 		"            <a href=\"../../../Products/UserHomeService/AllProducts\">Home<i class=\"fa fa-institution\"></i></a>\r\n" + 
-					 		"            <a href=\"myCart.jsp\">My Cart<i class='fas fa-cart-arrow-down'></i></a>\r\n" + 
+					 		"            <a href=\"../../../Products/MyCartService/viewMyCart\">My Cart<i class='fas fa-cart-arrow-down'></i></a>\r\n" + 
 					 		"            <a href=\"../../../Products/UserViewProductService/UserCart\">My Orders  <i class='fab fa-elementor'></i></a>\r\n" + 
 					 		"            <a href=\"../../../Products/UserMessageService/messageUser\">Message Us <i class='fas fa-comment-alt'></i></a>\r\n" + 
 					 		"     \r\n" + 
