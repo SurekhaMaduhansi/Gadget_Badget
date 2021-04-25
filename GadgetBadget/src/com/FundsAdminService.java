@@ -58,6 +58,25 @@ public class FundsAdminService {
 	}
 	
 	
+	@DELETE
+	@Path("/DeleteFundRequestsPostman")
+	@Consumes(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String deleteItem(String requestData)
+	{
+	//Convert the input string to an XML document
+	 Document doc = Jsoup.parse(requestData, "", Parser.xmlParser());
+
+	//Read the value from the element <itemID>
+	 String RequestID = doc.select("requestData").text();
+	 int ProjectID = doc.select("ProjectID").size();
+	 
+	 String output = fundRequests.deleteFundRequests(RequestID,ProjectID);
+	return output;
+	}
+
+	
+	
 	@GET
 	@Path("/readAcceptedFunds")
 	@Produces(MediaType.TEXT_HTML)

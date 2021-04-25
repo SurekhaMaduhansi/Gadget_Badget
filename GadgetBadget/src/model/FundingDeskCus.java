@@ -185,7 +185,7 @@ public class FundingDeskCus {
 				"  </div>\r\n" + 
 				"</div>"
 				+ "<br><br><center><h5>--------------Current Projects--------------</h5><br><br>"
-				+ "<div class=\"card mb-3\" style=\"width:900px\">";
+				+ "<div style=\"width:900px\">";
 		
 		String query = "select * from projects";
 		Statement stmt = con.createStatement();
@@ -208,8 +208,8 @@ public class FundingDeskCus {
 			
 			
 			// Add into the html table
-			output += "<img class=\"card-img-top\" src="+Image+" alt=\"Card image cap\">";
-			output += "<div class=\"card-body\">\r\n" + 
+			//output += "<img class=\"card-img-top\" src="+Image+" alt=\"Card image cap\">";
+			output += "<div >" + 
 					"    <h5 class=\"card-title\">Project Name : "+ProjectName+"</h5>";
 			output += "<h6>Budget : "+Budget+"</h6>\r\n" + 
 					"    <p class=\"card-text\">About Project :  "+Description+"</p>";
