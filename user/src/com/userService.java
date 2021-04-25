@@ -71,6 +71,31 @@ public class userService
 	}
 	
 	
+	
+	@PUT
+	@Path("/updateUser") 
+	@Consumes(MediaType.APPLICATION_JSON) 
+	@Produces(MediaType.TEXT_PLAIN) 
+	public String updateUser(String itemData) 
+	{ 
+	//Convert the input string to a JSON object 
+	 JsonObject itemObject = new JsonParser().parse(itemData).getAsJsonObject(); 
+	//Read the values from the JSON object
+	 String UserEmail = itemObject.get("UserEmail").getAsString(); 
+	 String firstName = itemObject.get("firstName").getAsString(); 
+	 String lastName = itemObject.get("lastName").getAsString(); 
+	 String type = itemObject.get("type").getAsString(); 
+	 String phone = itemObject.get("phone").getAsString();
+	 String password = itemObject.get("password").getAsString(); 
+	 
+	 String output = itemObj.updateUser(UserEmail, firstName, lastName, type, phone,password); 
+	return output; 
+	}
+	
+	
+	
+	
+	//postman
 	//postman
 	@POST
 	@Path("/addPost") 
@@ -91,6 +116,29 @@ public class userService
 		return output;
 		
 	}
+	
+	
+	@DELETE
+	@Path("/DeletePostman") 
+	@Consumes(MediaType.APPLICATION_XML) 
+	@Produces(MediaType.TEXT_PLAIN) 
+	public String deleteItem(String UserData) 
+	{ 
+	//Convert the input string to an XML document
+	 Document doc = Jsoup.parse(UserData, "", Parser.xmlParser()); 
+	 
+	//Read the value from the element <itemID>
+	 String UserEmail = doc.select("UserEmail").text(); 
+	 String output = itemObj.deleteUser(UserEmail); 
+	return output; 
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
