@@ -531,9 +531,10 @@ public class UserViewProduct {
 						 			"  <p>You can proceed the order by pressing button bellow.</p>\r\n" + 
 						 			"  <hr>\r\n" + 
 						 			"  <p class=\"mb-0\">"
-						 			+ "<form method='post' action='../../../Products/BillService/bill' >"
-						 			+ "<button type='submit' class='button'><b> Order</p>\r\n" + 
-						 			"</div></div></form>"
+//						 			+ "<form method='post' action='../../../Products/BillService/bill' >"
+//						 			+ "<button type='submit' class='button'><b> Order</p>\r\n" + 
+//						 			"</div></div></form>"
+									+"<a href='../../../Products/BillService/bill' class='button'>Order</a>"
 						 			 +"</table><br><br><footer class=\"page-footer font-small color-dark\" style=\"background-color:#1f3a93\">\r\n" + 
 									 			"\r\n" + 
 									 			"  <div style=\"background-color: #59abe3;\">\r\n" + 

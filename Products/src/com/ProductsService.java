@@ -63,7 +63,7 @@ public class ProductsService
 		String quantity = ProductObject.get("quantity").getAsString();
 		String price = ProductObject.get("price").getAsString();
 		String status = ProductObject.get("status").getAsString();
-		String output = productObj.updateProduct(ID, name, category, Description, quantity,price,status);
+		String output = productObj.updateProduct(ID,name, category, Description, quantity,price,status);
 		return output;
 		}
 		
@@ -78,5 +78,6 @@ public class ProductsService
 			String output=productObj.deleteProduct(ID);
 			return output;
 		}
+		
 		
 }

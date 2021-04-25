@@ -1239,6 +1239,40 @@ public class UserMessage {
 			 }
 	
 	
+	public String insertDeliveredStatus(String email , int ID, String status1)
+	 {
+		
+		 	String output = "";
+			String status="Delivered";
+		
+			try{
+				Connection con = connect();
+				if (con == null)
+				{
+					return "Error while connecting to the database for inserting."; 
+				}
+				Statement st = con.createStatement();
+				System.out.println(ID);
+				System.out.println(status);
+				System.out.println(email);
+				st.executeUpdate("update carts set status='"+status+"' where ID='"+ID+"' and email='"+email+"' and address is not NULL");
+				output = "Updated as 'Delivered' successfully";
+					
+			
+			
+			}catch(Exception e){
+				
+				output = "Error while inserting the item.";
+				System.err.println(e.getMessage());
+					
+			}
+						
+			     return output;
+			}
+	
+	
+	
+	
 	public String insertCancelStatus(String email , int ID, String status1)
 	 {
 		
@@ -1252,7 +1286,9 @@ public class UserMessage {
 					return "Error while connecting to the database for inserting."; 
 				}
 				Statement st = con.createStatement();
-				
+				System.out.println(ID);
+				System.out.println(status);
+				System.out.println(email);
 				st.executeUpdate("update carts set status='"+status+"' where ID='"+ID+"' and email='"+email+"' and address is not NULL");
 				output = "canceled successfully";
 					
@@ -1380,7 +1416,7 @@ public class UserMessage {
 				    "<th>Cancel</th>"+
 				    "<th>Deliver</th>";
 				  
-			 String query = "select *from carts where order_date is not NULL and status='processing'";
+			 String query = "select * from carts where order_date is not NULL and status='processing'";
 			 Statement stmt = con.createStatement();
 			 ResultSet rs = stmt.executeQuery(query);
 			 
@@ -1416,9 +1452,15 @@ public class UserMessage {
 				 // buttons
 				 output += "<td><form method='post' action='../../../Products/AdminCheckService/checkbill/addCancelStatus'>"
 						 +"<button type='submit' class='button button3' >Cancel</button>"
+						 +"<input type='hidden' name='ID' value='"+ID+"'>"
+						 +"<input type='hidden' name='email' value='"+email+"'>"
+						 +"<input type='hidden' name='ststus' value='Delivered'>"
 						 +"</form></td>"
-						 + "<td><form method='post' action='../../../Products/ProductsService/Products/Delete'>"
+						 + "<td><form method='post' action='../../../Products/AdminCheckService/checkbill/addDeliverStatus'>"
 						 + "<button type='submit' class='button button33'>Deliver</button>"
+						 +"<input type='hidden' name='ID' value='"+ID+"'>"
+						 +"<input type='hidden' name='email' value='"+email+"'>"
+						 +"<input type='hidden' name='ststus' value='Cancel'>"
 						+ "</form></td></tr>";
 				 }
 				 con.close();

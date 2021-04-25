@@ -368,16 +368,17 @@ public class Products {
 							
 					 // create a prepared statement
 							
-					 String query = "UPDATE products SET ID=?,name=?,category=?,Description=?,quantity=?,price=?,status=? WHERE ID=?";
+					 String query = "UPDATE products SET name=?,category=?,Description=?,quantity=?,price=?,status=? WHERE ID=?";
 					 PreparedStatement preparedStmt = con.prepareStatement(query);
 							
 					 // binding values
-					 preparedStmt.setString(1, name);
-					 preparedStmt.setString(2, category);
-					 preparedStmt.setString(3, Description);
-					 preparedStmt.setInt(4, Integer.parseInt(quantity));
-					 preparedStmt.setDouble(5, Double.parseDouble(price));
-					 preparedStmt.setString(6, status);
+					 preparedStmt.setInt(1, Integer.parseInt(ID));
+					 preparedStmt.setString(2, name);
+					 preparedStmt.setString(3, category);
+					 preparedStmt.setString(4, Description);
+					 preparedStmt.setInt(5, Integer.parseInt(quantity));
+					 preparedStmt.setDouble(6, Double.parseDouble(price));
+					 preparedStmt.setString(7, status);
 							
 					 // execute the statement
 					 preparedStmt.execute();

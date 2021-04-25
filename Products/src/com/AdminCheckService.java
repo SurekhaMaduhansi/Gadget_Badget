@@ -39,4 +39,19 @@ public class AdminCheckService {
 			String output = checkObj.insertCancelStatus(email,ID,status);  
 			return output;
 			}
+		    
+		    
+		    @POST
+			@Path("/addDeliverStatus")
+			@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+			@Produces(MediaType.TEXT_PLAIN)
+			public String insertDeliveredStatus(
+			@FormParam("email") String email,
+			@FormParam("ID") int ID,
+			@FormParam("status") String status)
+
+			{
+			String output = checkObj.insertDeliveredStatus(email,ID,status);  
+			return output;
+			}
 }
