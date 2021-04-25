@@ -355,7 +355,7 @@ public class Myprofile {
 			 "<th>Last Name</th>" + 
 			 "<th>Type</th>"+ "<th>Phone</th>" +"<th>Password</th>"+
 			 "<th>Remove</th><th>Update</th></tr>"; 
-		 String query = "select * from users where UserEmail like 'customer@gmail.com'"; 
+		 String query = "select * from users where UserEmail like 'Lakshik@gmail.com'"; 
 		 Statement stmt = con.createStatement(); 
 		 ResultSet rs = stmt.executeQuery(query); 
 		 // iterate through the rows in the result set

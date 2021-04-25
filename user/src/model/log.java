@@ -294,12 +294,7 @@ public class log {
 			 }
 			 
 			 if(i>0) {
-				 
-				 
 				 if(get_password.equals(password)) {
-					 
-					
-					 
 					 if(get_type.equals("Admin")) {
 						 
 						 System.out.println("logged in as a admin");
@@ -309,14 +304,14 @@ public class log {
 					 }else {
 						 System.out.println("logged in user type cannot found!");
 					 }
- 
-					 
-					 
 				 }else {
 					 System.out.println("Password Password incorrect");
 				 }
 			 }else {
+				 String output1="";
+				 
 				 System.out.println("Username Password incorrect");
+				 output="Username Password incorrect";
 			 }
 			 con.close(); 
 			 output = "";
