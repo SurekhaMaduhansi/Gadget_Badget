@@ -15,12 +15,13 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
-import org.jsoup.helper.HttpConnection.Response;
+//import org.jsoup.helper.HttpConnection.Response;
 
 import model.user;
 import com.logService;
 import com.mysql.cj.Session;
-
+import java.net.URISyntaxException;
+import javax.ws.rs.core.Response;
 
 public class log {
 	
@@ -113,7 +114,7 @@ public class log {
 			 		+ "<form action='../../../user/logService/log/logUser' method='post'>"
 			 		
 			 		+"<label for=\"exampleFormControlInput1\">Email address</label>\r\n" 
-			 		+"<input class=\"form-control\" type=\"text\" placeholder=\"Enter email\" name=\"email\" required>"
+			 		+"<input class=\"form-control\" type=\"text\" placeholder=\"Enter email\" name=\"UserEmail\" required>"
 			 		
 			 		+"<label for=\"exampleFormControlInput1\">Password</label>\r\n" 
 			 		+"<input class=\"form-control\" type=\"password\" placeholder=\"Enter your password\" name=\"password\" required>\n"
@@ -270,7 +271,7 @@ public class log {
 		
 		
 		
-		public String login(String UserEmail, String password)
+		public Response login(String UserEmail, String password)
 		{
 			
 			String output = ""; 
@@ -278,7 +279,9 @@ public class log {
 			 { 
 			 Connection con = connect(); 
 			 if (con == null) 
-			 {return "Error while connecting to the database for inserting."; } 
+			 {//return "Error while connecting to the database for inserting."; 
+				  
+			 }
 			 // create a prepared statement
 			 String query =  "select UserEmail, password, type from users where UserEmail='"+UserEmail+"'";
 			 
@@ -298,20 +301,25 @@ public class log {
 					 if(get_type.equals("Admin")) {
 						 
 						 System.out.println("logged in as a admin");
+						 // admin redirect
+						 java.net.URI location = null;
+						 location = new java.net.URI("../../../user/adminHome.jsp");
+						 return Response.temporaryRedirect(location).build() ;
 						 
 					 }else if(get_type.equals("customer")) {
 						 System.out.println("logged in as a customer");
+						 //customer redirect
+						 java.net.URI location = null;
+						 location = new java.net.URI("../../../user/customerHome.jsp");
+						 return Response.temporaryRedirect(location).build() ;
 					 }else {
-						 System.out.println("logged in user type cannot found!");
+						 message();
 					 }
 				 }else {
-					 System.out.println("Password Password incorrect");
+					 message();
 				 }
 			 }else {
-				 String output1="";
-				 
-				 System.out.println("Username Password incorrect");
-				 output="Username Password incorrect";
+				 message();
 			 }
 			 con.close(); 
 			 output = "";
@@ -322,9 +330,17 @@ public class log {
 			 output = "Error while inserting the item."; 
 			 System.err.println(e.getMessage()); 
 			 } 
-			 return output; 
+			 return null; 
 		}
+		
+	//login messages
 	
+	public void message() {
+		
+		System.out.println("Username Password incorrect");
+		
+		
+	}
 	//validate the user loging
 		
 	public boolean validate(String email ,String password){

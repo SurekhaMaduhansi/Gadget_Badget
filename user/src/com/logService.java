@@ -13,7 +13,8 @@ import com.google.gson.*;
 import com.mysql.cj.Session;
 
 //For XML
-import org.jsoup.*; 
+import org.jsoup.*;
+import org.jsoup.helper.HttpConnection.Response;
 import org.jsoup.parser.*; 
 import org.jsoup.nodes.Document;
 
@@ -35,10 +36,10 @@ public class logService {
 	@Path("/logUser")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_HTML)
-	public String Delete(@FormParam("UserEmail")String UserEmail,
+	public javax.ws.rs.core.Response Delete(@FormParam("UserEmail")String UserEmail,
 			@FormParam("password")String password) throws SQLException
 	{
-		String output=itemObj.login(UserEmail, password);
+		javax.ws.rs.core.Response output=itemObj.login(UserEmail, password);
 		return output;
 		
 	}

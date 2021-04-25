@@ -16,7 +16,9 @@ import com.google.gson.*;
 import org.jsoup.*; 
 import org.jsoup.parser.*; 
 import org.jsoup.nodes.Document; 
-@Path("/user") 
+@Path("/Postman \r\n" + 
+		"Postman lets users create collections for their Postman API calls. Each collection can create subfolders and multiple requests. This helps in organizing the test suites.\r\n" + 
+		"") 
 public class userService 
 { 
 	user itemObj = new user(); 

@@ -359,6 +359,7 @@ public class user {
 			 if (con == null) 
 			 {return "Error while connecting to the database for deleting."; } 
 			 
+			 
 			 	System.out.println(UserEmail);
 				 // create a prepared statement
 				 String query = "delete from users where UserEmail=?"; 
