@@ -2,12 +2,14 @@ package com;
 
 import model.user;
 
-
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 //For REST Service
 import javax.ws.rs.*; 
-import javax.ws.rs.core.MediaType; 
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 //For JSON
 import com.google.gson.*; 
 //For XML
@@ -33,15 +35,27 @@ public class userService
 	@Path("/add") 
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
 	@Produces(MediaType.TEXT_PLAIN) 
-	public String insertItem(@FormParam("UserEmail") String UserEmail, 
+	public Response insertItem(@FormParam("UserEmail") String UserEmail, 
 	 @FormParam("firstName") String firstName, 
 	 @FormParam("lastName") String lastName,
 	 @FormParam("type") String type,
 	 @FormParam("phone") String phone,
 	 @FormParam("password") String password) 
 	{ 
-	 String output = itemObj.insertUser(UserEmail, firstName, lastName, type, phone, password);
-	return output; 
+	 
+		 itemObj.insertUser(UserEmail, firstName, lastName, type, phone, password);
+	 	 
+		 java.net.URI location = null;
+		try {
+			location = new java.net.URI("../../../user/accountCreated.jsp?A_User_Added");
+			
+		} catch (URISyntaxException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return Response.temporaryRedirect(location).build() ;
+		
 	}
 	
 

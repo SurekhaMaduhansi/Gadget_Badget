@@ -44,7 +44,7 @@ public class add {
 		 		"<head>\r\n" + 
 		 		"<meta charset=\"ISO-8859-1\">\r\n" + 
 		 		"\r\n" + 
-		 		"	<link rel=\"stylesheet\" href=\"Home.css\">\r\n" + 
+		 		"	<link rel=\"stylesheet\" href=\"../../../user/Home.css\">\r\n" + 
 		 		"	<!-- bootstrap -->\r\n" + 
 		 		"	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
 		 		"		\r\n" + 
@@ -64,7 +64,7 @@ public class add {
 		 		"  <nav  class=\"navbar fixed-top navbar-white bg-white\">\r\n" + 
 		 		"		<div class= \"container\">\r\n" + 
 		 		"			<a class=\"navbar-brand\" href=\"#\">\r\n" + 
-		 		"     			 <img src=\"../images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"95\" float=\"left\">\r\n" + 
+		 		"     			 <img src=\"../../../user/images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"95\" float=\"left\">\r\n" + 
 		 		"   			</a>\r\n" + 
 		 		"   			<br>\r\n" + 
 		 		"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
@@ -77,11 +77,8 @@ public class add {
 		 		"			  </a>\r\n" + 
 		 		"			\r\n" + 
 		 		"			</div>\r\n" + 
-		 		"			\r\n" + 
-		 		"			<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button>\r\n" + 
-		 		"      \r\n" + 
 		 		"			<div class=\"dropdown\">\r\n" + 
-		 		"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"78\" >\r\n" + 
+		 		"			   <img src=\"../../../user/images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"78\" >\r\n" + 
 		 		"			</div>\r\n" + 
 		 		"			\r\n" + 
 		 		"		</div>\r\n" + 
@@ -90,10 +87,10 @@ public class add {
 		 		"	\r\n" + 
 		 		"	\r\n" + 
 		 		"	<br>\r\n" + 
-		 		"  <img class=\"card-img-top\" src=\"../images/admin.jpg\" alt=\"Card image cap\"  height=\"510\">\r\n" + 
+		 		"  <img class=\"card-img-top\" src=\"../../../user/images/admin.jpg\" alt=\"Card image cap\"  height=\"510\">\r\n" + 
 		 		"  <br><br>" + 
 		 		"<center>"
-		 		+ "<div class=\"card border-primary mb-3\" style=\"max-width: 35rem;\">\r\n"
+		 		+ "<div class=\"card border-primary mb-3\" style='width:600px'>\r\n"
 		 		+ "<h5 style='color:red'>Enter your details....</h5><br>" + 
 		 		" <center><form action='../../../user/userService/user/add' method='post' style='width:30rem'>" + 
 		 		"	<label for=\"exampleFormControlInput1\">Email address</label>\r\n" + 

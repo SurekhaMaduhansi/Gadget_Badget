@@ -56,7 +56,7 @@ public class log {
 			 		"<head>\r\n" + 
 			 		"<meta charset=\"ISO-8859-1\">\r\n" + 
 			 		"\r\n" + 
-			 		"	<link rel=\"stylesheet\" href=\"Home.css\">\r\n" + 
+			 		"	<link rel=\"stylesheet\" href=\"../../../user/Home.css\">\r\n" + 
 			 		"	<!-- bootstrap -->\r\n" + 
 			 		"	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
 			 		"		\r\n" + 
@@ -64,8 +64,7 @@ public class log {
 			 		"			integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n" + 
 			 		"	\r\n" + 
 			 		"	<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">	\r\n" + 
-			 		"	\r\n" + 
-			 		"	\r\n" + 
+			 		"		\r\n" + 
 			 		"		\r\n" + 
 			 		"	<!-- bootstrap -->\r\n" + 
 			 		"<title>GadgetBadget</title>\r\n" + 
@@ -73,16 +72,19 @@ public class log {
 			 		"\r\n" + 
 			 		"<body>\r\n" + 
 			 		"\r\n" + 
+			 		"<!-- navigation bar -->\r\n" + 
+			 		"\r\n" + 
 			 		"  <nav  class=\"navbar fixed-top navbar-white bg-white\">\r\n" + 
 			 		"		<div class= \"container\">\r\n" + 
 			 		"			<a class=\"navbar-brand\" href=\"#\">\r\n" + 
-			 		"     			 <img src=\"../images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"95\" float=\"left\">\r\n" + 
+			 		"     			 <img src=\"../../../user/images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
 			 		"   			</a>\r\n" + 
 			 		"   			<br>\r\n" + 
 			 		"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
 			 		"			  <a href=\"#\" class=\"active\">Home</a>\r\n" + 
 			 		"			  <a href=\"#\">Products</a>\r\n" + 
-			 		"			  <a href=\"#\">Projects</a>\r\n" + 
+			 		"			  <a href=\"#\">My Projects</a>\r\n" + 
+			 		"			  \r\n" + 
 			 		"			  <a href=\"#\">Funding HelpDesk</a>\r\n" + 
 			 		"			  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\r\n" + 
 			 		"			    <i class=\"fa fa-bars\"></i>\r\n" + 
@@ -90,28 +92,24 @@ public class log {
 			 		"			\r\n" + 
 			 		"			</div>\r\n" + 
 			 		"			\r\n" + 
-			 		"			<button class=\"btn\"><i class=\"fa fa-shopping-cart\" style=\"font-size:24px\"></i></button>\r\n" + 
-			 		"      \r\n" + 
 			 		"			<div class=\"dropdown\">\r\n" + 
-			 		"			   <img src=\"../images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"78\" >\r\n" + 
-			 		"			  <div class=\"dropdown-content\">\r\n" + 
-			 		
-			 		"			  </div>\r\n" + 
-			 		"			</div>\r\n" + 
-			 		"			\r\n" + 
-			 		"		</div>\r\n" + 
-			 		"	\r\n" + 
+			 		"			   <img src=\"../../../user/images/avatar.png\" class=\"img-fluid\" alt=\"avatar1\" width=\"50\" height=\"80\" >\r\n" + 
+			 		"			</div>			\r\n" + 
+			 		"		</div>	\r\n" + 
 			 		"	</nav>\r\n" + 
 			 		"	\r\n" + 
-			 		"	\r\n" + 
+			 		"<!-- navigation bar -->\r\n" + 
 			 		"	<br>\r\n" + 
-			 		"  <img class=\"card-img-top\" src=\"../images/admin.jpg\" alt=\"Card image cap\"  height=\"510\">\r\n" + 
-			 		"  <br><br>\r\n" + 
+			 		" 	<img class=\"card-img-top\" src=\"../../../user/images/admin.jpg\" alt=\"Card image cap\"  height=\"510\">\r\n" + 
+			 		"  <br><br><br>\r\n" + 
 			 		"  \r\n" + 
+			 		"  \r\n" + 
+			 		"  <center><h3> Welcome to GadgetBadget </h3></center>\r\n" + 
+			 		" <br><br><br>" + 
 			 		"<!-- ================form============================================================================================= -->\r\n"
 			 		+"<center>"
-			 		+"<div class=\"card border-primary mb-3\" style=\"max-width: 35rem;\">"
-			 		+"<h5 style='color:red'>Enter your login details....</h5><br>"
+			 		+"<div class=\"card border-primary mb-3\" style='width: 500px'>"
+			 		+"<center><h5 style='color:red'>Enter your login details....</h5><br>"
 			 		+ "<form action='../../../user/logService/log/logUser' method='post'>"
 			 		
 			 		+"<label for=\"exampleFormControlInput1\">Email address</label>\r\n" 
@@ -120,7 +118,7 @@ public class log {
 			 		+"<label for=\"exampleFormControlInput1\">Password</label>\r\n" 
 			 		+"<input class=\"form-control\" type=\"password\" placeholder=\"Enter your password\" name=\"password\" required>\n"
 			 		
-					+"	<input type='submit' value='Login' class='btn btn-success' >" 
+					+"	<input type='submit' value='Login' class='btn btn-success' ></center>" 
 			 		+ "</form>" 
 			 		+"</div>"
 			 		+"</center>"+
@@ -302,7 +300,7 @@ public class log {
 					 
 					
 					 
-					 if(get_type.equals("admin")) {
+					 if(get_type.equals("Admin")) {
 						 
 						 System.out.println("logged in as a admin");
 						 
