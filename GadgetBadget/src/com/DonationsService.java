@@ -47,7 +47,7 @@ public class DonationsService {
 
 	
 	
-	//Delete Projects Details :
+	//Delete donations :
 	@POST
 	@Path("/Delete")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -58,5 +58,22 @@ public class DonationsService {
 		return output;
 
 	}
+	
+	
+	/*@DELETE
+	@Path("/DelPostMan")
+	@Consumes(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String deleteItem(String donationData)
+	{
+	//Convert the input string to an XML document
+	 Document doc = Jsoup.parse(donationData, "", Parser.xmlParser());
+
+	//Read the value from the element <itemID>
+	 String donationID = doc.select("donationID").text();
+	 String output = DonationsObject.deleteItem(donationID);
+	return output;
+	}*/
+
 
 }
