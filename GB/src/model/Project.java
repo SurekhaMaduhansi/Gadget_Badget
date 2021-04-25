@@ -84,46 +84,38 @@ public class Project {
 			 		"</head>\r\n" + 
 			 		"    <!--Header-->\r\n" + 
 			 		"    <br>\r\n" + 
-			 		"    <nav class=\"navbar navbar-expand-md navbar-dark\" style=\"background-color:black\">\r\n" + 
-			 		"    \r\n" + 
-			 		"         \r\n" + 
+			 		"    <nav class=\"navbar navbar-expand-md navbar-dark\" style=\"background-color:black\">\r\n" +  
 			 		
-			 		"            <div><a  href=\"../../../GB/ProjectService/project_list/AddProject\"><h5>Add New Product</h5> <i class='navbar-brand'></i></a>\r\n" +
+			 		"            <a  href=\"../../../GB/ProjectService/project_list/AddProject\"><h5 style=\"color:white;\">Add New Product</h5> <i class='navbar-brand'></i></a>\r\n" +
+			 		"&nbsp &nbsp &nbsp &nbsp "+
+			 		"            <a href=\"../../../GB/ProjectService/project_list/load\"><h6 style=\"color:#818285;\">All Projects and Manage project details</h6> <i class='navbar-brand'></i></a>\r\n" + 
 			 		
-			 		"            <a href=\"../../../GB/ProjectService/project_list/load\">All Projects and Manage project details <i class='nav-link'></i></a>\r\n" + 
-			 		"</div>"+
-			 		"  \r\n" + 
-			 		"          </nav>\r\n" + 
-			 		"                    \r\n" +
-			 		"           <br>\r\n" + 
-			 		"\r\n" + 
+			 		"</nav>\r\n" + 
+			 		"<br>\r\n" + 
+			 		
 			 		"<body>\r\n" + 
-			 		"	\r\n" +  
-			 		"			    \r\n" + 
-			 		"\r\n" + 
-			 		"		<center><div class=\"container col-md-5\">\r\n" + 
+			 		
+			 		"		<div class=\"container col-md-5\">\r\n" + 
 			 		"		<form action='../../../GB/ProjectService/project_list/AddProject'  method='post'><br><b>\r\n" + 
 			 		"			<div class=\"card\">\r\n" + 
 			 		
-			 		"  					<div class=\"card-body\">\r\n" + 
-			 		
-			 		"			<br>\r\n" +
-			 		"<caption><h2>Add New Project</h2></caption>\r\n"+
-			 		"<br>"+
+			 		"  					<div class=\"card-body\">\r\n" +
+			 		"<caption><h2 style=\"color:DodgerBlue;\">Add New Project</h2></caption>\r\n"+
+			 		"<br><br>"+
 			 		"			<input type=\"hidden\" name=\"ID\">" +
 			 		"			<fieldset class = 'form-group'><label>Project Code</label><br> <input type =\"text\" name = \"ProjectCode\" class ='form-control' placeholder = \"Enter the project code..\" required></fieldset>\r\n" + 
 			 		"			<fieldset class = 'form-group'><label>Project Name</label><br> <input type =\"text\" name = \"ProjectName\" class ='form-control' placeholder = \"Enter the project name..\" required></fieldset>\r\n" + 
 			 		"			<fieldset class = 'form-group'><label>Project Category</label><br> <input type =\"text\" name = \"Category\" class ='form-control' placeholder = \"Enter the project category..\" required></fieldset>\r\n" + 
 			 		"			<fieldset class = 'form-group'><label>Description</label><br> <input type =\"text\" name = \"Description\" class ='form-control' placeholder = \"Enter a short description..\" required></fieldset>\r\n" + 
 			 		"			<fieldset class = 'form-group'><label>Budget</label><br> <input type =\"text\" name = \"Budget\"class ='form-control' placeholder = \"Enter the budget value..\" required></fieldset>"
-			 		+ "\r\n"
+			 		+ "<br>\r\n"
 			 					+ "<input type='hidden'  name='UserEmail' value='shehani@GB.com'>" + 
 			 		"			<button class='btn btn-success'><span>Add Project </span></button>\r\n" + 
 			 		"				    \r\n" + 
 			 		"		</form>\r\n" + 
 			 		"  				</div>\r\n" + 
 			 		"			</div>\r\n" + 
-			 		"		</div></center>\r\n" + 
+			 		"		</div>\r\n" + 
 			 		"		\r\n" + 
 			 		
 			 		//footer
