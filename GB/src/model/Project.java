@@ -94,7 +94,6 @@ public class Project {
 			 		"<br>\r\n" + 
 			 		
 			 		"<body>\r\n" + 
-			 		
 			 		"		<div class=\"container col-md-5\">\r\n" + 
 			 		"		<form action='../../../GB/ProjectService/project_list/AddProject'  method='post'><br><b>\r\n" + 
 			 		"			<div class=\"card\">\r\n" + 
@@ -312,10 +311,17 @@ public class Project {
 						"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"130px\">\r\n" + 
 						"<br><br>"+
 						"\r\n"+
+						
 						"<center><h3> Welcome to GadgetBadget </h3></center>\r\n"+
 						"<br>\r\n"+
-						"<center><h6 Style='color:blue'>Projects you have submitted will be appeared here</h6>"+
-						"<br>"+
+						"<center><h6 Style='color:blue'>Projects you have submitted will be appeared here</h6></center>"+
+						
+						"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+
+						"<button class='btn btn-success'>"+
+						
+						"<span>Add New Record</span></button>\r\n" +
+						
+						"<br><br>"+
 						"<center><table class=\"table\" style=\"width:1350px\"><thead class=\"thead-dark\">\r\n"+
 						"<tr><th style ='width:75px'>Project Code</th>" +
 			 "<th scope=\"col\">Project Name</th>" +
@@ -554,8 +560,8 @@ public class Project {
 			 {return "Error while connecting to the database for deleting."; }
 			 
 			 // create a prepared statement
-			 String query = "delete from projects where ProjectId=?";
-			 PreparedStatement preparedStmt = con.prepareStatement(query);
+			 String query1 = "delete from projects where ProjectId=?";
+			 PreparedStatement preparedStmt = con.prepareStatement(query1);
 			 
 			 // binding values
 			 preparedStmt.setInt(1, Integer.parseInt(ProjectId));
@@ -563,7 +569,7 @@ public class Project {
 			 // execute the statement
 			 preparedStmt.execute();
 			 con.close();
-			 output = "Deleted successfully";
+			 output = "Deleted Successfully";
 			 
 		} catch (Exception e) {
 			// TODO: handle exception
