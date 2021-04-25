@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import javax.jws.soap.SOAPBinding.Style;
+
 public class Project {
 	
 	private Connection connection()
@@ -179,7 +181,7 @@ public class Project {
 						"  <nav  class=\"navbar fixed-top navbar-white bg-white\">\r\n" + 
 						"		<div class= \"container\">\r\n" + 
 						"			<a class=\"navbar-brand\" href=\"#\">\r\n" + 
-						"     			 <img src=\"../images/Capture.PNG\" alt=\"logo\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
+						"     			 <img src=\"../images/Capture.PNG\" width=\"220\" height=\"78\" float=\"left\">\r\n" + 
 						"   			</a>\r\n" + 
 						"   			<br>\r\n" + 
 						"   			<div class=\"topnav\" id=\"myTopnav\">\r\n" + 
@@ -207,14 +209,18 @@ public class Project {
 						"	\r\n" + 
 						"<!-- navigation bar -->\r\n" + 
 						"	<br>\r\n" + 
-						"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"500px\">\r\n" + 
-						"  <br><br><br>"
-						+"<center><table class=\"table\" style=\"width:850px\"><thead><tr><th>Project Id</th>\""+
-				
-			 "<th scope=\"col\">Project Code</th>" +
+						"  <img class=\"card-img-top\" src=\"../images/adminpage.jpg\" alt=\"Card image cap\"  height=\"130px\">\r\n" + 
+						"<br><br>"+
+						"\r\n"+
+						"<center><h3> Welcome to GadgetBadget </h3></center>\r\n"+
+						"<br>\r\n"+
+						"<center><h6 Style='color:blue'>Projects you have submitted will be appeared here</h6>"+
+						"<br>"+
+						"<center><table class=\"table\" style=\"width:1350px\"><thead class=\"thead-dark\">\r\n"+
+						"<tr><th style ='width:75px'>Project Code</th>" +
 			 "<th scope=\"col\">Project Name</th>" +
 			 "<th scope=\"col\">Category</th>" +
-			 "<th scope=\"col\">Description</th>" +
+			 "<th style ='width:300px'>Description</th>" +
 			 "<th scope=\"col\">Budget</th>" +
 			 "<th scope=\"col\">Edit</th><th scope=\"col\">Remove</th><th scope=\"col\">Request for Funds</th></tr>";
 
@@ -236,7 +242,7 @@ public class Project {
 			 
 			 
 			 // Add into the html table
-			 output += "<tr><td>" + ProjectId + "</td>";
+			 //output += "<tr><td>" + ProjectId + "</td>";
 			 output += "<td>" + ProjectCode + "</td>";
 			 output += "<td>" + ProjectName + "</td>";
 			 output += "<td>" + Category + "</td>";
@@ -391,7 +397,7 @@ public class Project {
 			 		"<!-- bootstrap -->\r\n" + 
 			 		"\r\n" + 
 			 		"</body>\r\n"+
-			 		"</html>";
+			 	"</html>";
 			
 		} catch (Exception e) {
 			// TODO: handle exception
