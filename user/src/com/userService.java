@@ -71,5 +71,28 @@ public class userService
 	}
 	
 	
+	//postman
+	@POST
+	@Path("/addPost") 
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
+	@Produces(MediaType.TEXT_PLAIN) 
+	public String insertItempost(@FormParam("UserEmail") String UserEmail, 
+	 @FormParam("firstName") String firstName, 
+	 @FormParam("lastName") String lastName,
+	 @FormParam("type") String type,
+	 @FormParam("phone") String phone,
+	 @FormParam("password") String password) 
+	{ 
+	 
+		String output= itemObj.insertUser(UserEmail, firstName, lastName, type, phone, password);
+	 	 
+		
+		
+		return output;
+		
+	}
+	
+	
+	
 }
 	
