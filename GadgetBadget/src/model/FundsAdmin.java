@@ -663,13 +663,14 @@ public class FundsAdmin {
 			 {return "Error while connecting to the database for updating."; }
 			 
 			 // create a prepared statement
-			 String query = "UPDATE accepted SET  UserEmail=? ,ProjectID=?, amount=? WHERE FundID=?";
+			 String query = "UPDATE accepted SET UserEmail=?,ProjectID=?,amount=? WHERE FundID=?";
 			 PreparedStatement preparedStmt = con.prepareStatement(query);
 			 // binding values
-			 preparedStmt.setInt(1,Integer.parseInt(FundID));
-			 preparedStmt.setString(2, UserEmail);
-			 preparedStmt.setInt(3,Integer.parseInt(ProjectID));
-			 preparedStmt.setString(4, amount);
+			 
+			 preparedStmt.setString(1, UserEmail);
+			 preparedStmt.setInt(2,Integer.parseInt(ProjectID));
+			 preparedStmt.setString(3, amount);
+			 preparedStmt.setInt(4,Integer.parseInt(FundID));
 			
 			 // execute the statement
 			 preparedStmt.execute();
